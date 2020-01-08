@@ -14,8 +14,13 @@ class ArticleViewModel {
     var date: String?
     
     init(article: Article) {
-        self.posterImageURL = article.url
+        self.posterImageURL = article.urlToImage
         self.headline = article.title
-        self.date = article.publishedAt
+        self.date = formatDate(with: article.publishedAt ?? "")
+    }
+    
+    func formatDate(with stringDate: String) -> String {
+        let date = DateConvertor.shared.getConverted(dateString: stringDate, fromFormat: .yyyyMMddTHHmmssZ, toFormat: .MMMdyyyyhmma)
+        return date
     }
 }

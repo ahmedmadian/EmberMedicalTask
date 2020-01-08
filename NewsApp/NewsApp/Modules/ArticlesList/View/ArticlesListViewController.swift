@@ -16,8 +16,11 @@ class ArticlesListViewController: BaseViewController, Storyboarded {
     static var storyboardName: Storyboards { return .main}
     var viewModel: ArticlesListViewModel! = ArticlesListViewModel()
     let disposeBag = DisposeBag()
-    lazy var refreshControl = UIRefreshControl()
-   
+    lazy var refreshControl: UIRefreshControl = {
+       let controller = UIRefreshControl()
+        controller.backgroundColor =  #colorLiteral(red: 0.6682028062, green: 0.6682028062, blue: 0.6682028062, alpha: 1)
+        return controller
+    }()
     
     //MARK:- IBOutlet
     @IBOutlet weak var tableView: UITableView!
@@ -40,9 +43,7 @@ class ArticlesListViewController: BaseViewController, Storyboarded {
         tableView.register(UINib(nibName: ArticleCell.typeName, bundle: Bundle.main), forCellReuseIdentifier: ArticleCell.typeName)
     }
     
-    private func setupTableView() {
-        tableView.estimatedRowHeight = 160
-        tableView.addSubview(refreshControl)
+    private func setupTableView() {        tableView.addSubview(refreshControl)
     }
     
     override func hideLoader() {
@@ -52,7 +53,7 @@ class ArticlesListViewController: BaseViewController, Storyboarded {
     
     
     private func bindViewModel() {
-        let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewDidAppear(_:)))
+        let viewDidAppear = rx.sentMessage(#selector(UIViewController.viewDidAppear(_:)))
         .take(1)
         .mapToVoid()
         .asDriverOnErrorJustComplete()
@@ -61,7 +62,7 @@ class ArticlesListViewController: BaseViewController, Storyboarded {
         .controlEvent(.valueChanged)
         .asDriver()
         
-        let output = viewModel.transform(input: ArticlesListViewModel.Input(loadTrigger: Driver.merge(viewWillAppear, pullToRefresh)))
+        let output = viewModel.transform(input: ArticlesListViewModel.Input(loadTrigger: Driver.merge(viewDidAppear, pullToRefresh)))
         
         output.loading.asObservable().subscribe(onNext: { (isLoading) in
             if isLoading {
@@ -70,11 +71,11 @@ class ArticlesListViewController: BaseViewController, Storyboarded {
                 self.hideLoader()
             }
         }).disposed(by: disposeBag)
-        
+
         output.error.asObservable().subscribe(onNext: { (error) in
             self.showErrorMessage(text: error.localizedDescription)
         }).disposed(by: disposeBag)
-        
+
         output.title.drive(navigationItem.rx.title).disposed(by: disposeBag)
         
         output.articles.drive(tableView.rx.items(cellIdentifier: ArticleCell.typeName, cellType: ArticleCell.self)) { tableView, viewModel, cell in

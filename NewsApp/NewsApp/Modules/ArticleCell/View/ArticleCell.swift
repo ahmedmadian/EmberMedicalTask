@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ArticleCell: UITableViewCell {
 
@@ -22,6 +23,14 @@ class ArticleCell: UITableViewCell {
        }
     
     func config(with viewModel: ArticleViewModel) {
+        posterImageView.makeRoundedCorners(with: 8.0)
+        
+        posterImageView.kf.setImage(with: URL.init(string: viewModel.posterImageURL ?? ""), options: [
+        .scaleFactor(UIScreen.main.scale),
+        .transition(.fade(1)),
+        .cacheOriginalImage
+        ])
+        
         self.headlineLabel.text = viewModel.headline
         self.dateLabel.text = viewModel.date
     }
