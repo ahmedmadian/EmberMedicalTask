@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,15 @@
 		DE9C3DDA23C5EB3F0072B154 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE9C3DD823C5EB3F0072B154 /* LaunchScreen.storyboard */; };
 		DE9C3DE323C5EE430072B154 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C3DE223C5EE430072B154 /* Article.swift */; };
 		DE9C3DE523C5EE590072B154 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C3DE423C5EE590072B154 /* Source.swift */; };
+		DE9C3DEA23C5F09D0072B154 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C3DE923C5F09D0072B154 /* RemoteDataSource.swift */; };
+		DE9C3DEC23C5F1260072B154 /* RemoteDataSourceServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C3DEB23C5F1260072B154 /* RemoteDataSourceServiceError.swift */; };
+		DE9C3DEE23C5F17A0072B154 /* Endpointed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C3DED23C5F17A0072B154 /* Endpointed.swift */; };
+		DE9C3DF123C5F20C0072B154 /* HTTPMethod+HTTPSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C3DF023C5F20C0072B154 /* HTTPMethod+HTTPSchema.swift */; };
+		DE9C3DF423C5F2C50072B154 /* Dictionary+merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C3DF323C5F2C50072B154 /* Dictionary+merge.swift */; };
+		DE9C3DF623C5F3180072B154 /* Error+Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C3DF523C5F3180072B154 /* Error+Code.swift */; };
+		DE9C3DF923C5F3980072B154 /* NewsAPIEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C3DF823C5F3980072B154 /* NewsAPIEndPoints.swift */; };
+		DE9C3DFB23C5F4090072B154 /* NewsAPIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C3DFA23C5F4090072B154 /* NewsAPIConstants.swift */; };
+		DE9C3DFD23C5F5F20072B154 /* NewsAPIRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C3DFC23C5F5F20072B154 /* NewsAPIRemoteDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +41,15 @@
 		DE9C3DDB23C5EB3F0072B154 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE9C3DE223C5EE430072B154 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		DE9C3DE423C5EE590072B154 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
+		DE9C3DE923C5F09D0072B154 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
+		DE9C3DEB23C5F1260072B154 /* RemoteDataSourceServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSourceServiceError.swift; sourceTree = "<group>"; };
+		DE9C3DED23C5F17A0072B154 /* Endpointed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpointed.swift; sourceTree = "<group>"; };
+		DE9C3DF023C5F20C0072B154 /* HTTPMethod+HTTPSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPMethod+HTTPSchema.swift"; sourceTree = "<group>"; };
+		DE9C3DF323C5F2C50072B154 /* Dictionary+merge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+merge.swift"; sourceTree = "<group>"; };
+		DE9C3DF523C5F3180072B154 /* Error+Code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Code.swift"; sourceTree = "<group>"; };
+		DE9C3DF823C5F3980072B154 /* NewsAPIEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIEndPoints.swift; sourceTree = "<group>"; };
+		DE9C3DFA23C5F4090072B154 /* NewsAPIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIConstants.swift; sourceTree = "<group>"; };
+		DE9C3DFC23C5F5F20072B154 /* NewsAPIRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIRemoteDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +102,8 @@
 		DE9C3DCC23C5EB3E0072B154 /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				DE9C3DF223C5F2B50072B154 /* Utilities */,
+				DE9C3DE623C5EF300072B154 /* Persistence */,
 				DE9C3DE123C5EDB10072B154 /* Model */,
 				DE9C3DCD23C5EB3E0072B154 /* AppDelegate.swift */,
 				DE9C3DCF23C5EB3E0072B154 /* SceneDelegate.swift */,
@@ -105,6 +125,61 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		DE9C3DE623C5EF300072B154 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				DE9C3DE823C5EFCA0072B154 /* LocalDataSource */,
+				DE9C3DE723C5EFB60072B154 /* RemoteDataSource */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		DE9C3DE723C5EFB60072B154 /* RemoteDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				DE9C3DF723C5F34F0072B154 /* NewsAPI */,
+				DE9C3DEF23C5F1EB0072B154 /* NetworkUtility */,
+				DE9C3DE923C5F09D0072B154 /* RemoteDataSource.swift */,
+				DE9C3DEB23C5F1260072B154 /* RemoteDataSourceServiceError.swift */,
+				DE9C3DED23C5F17A0072B154 /* Endpointed.swift */,
+			);
+			path = RemoteDataSource;
+			sourceTree = "<group>";
+		};
+		DE9C3DE823C5EFCA0072B154 /* LocalDataSource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocalDataSource;
+			sourceTree = "<group>";
+		};
+		DE9C3DEF23C5F1EB0072B154 /* NetworkUtility */ = {
+			isa = PBXGroup;
+			children = (
+				DE9C3DF023C5F20C0072B154 /* HTTPMethod+HTTPSchema.swift */,
+			);
+			path = NetworkUtility;
+			sourceTree = "<group>";
+		};
+		DE9C3DF223C5F2B50072B154 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DE9C3DF323C5F2C50072B154 /* Dictionary+merge.swift */,
+				DE9C3DF523C5F3180072B154 /* Error+Code.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		DE9C3DF723C5F34F0072B154 /* NewsAPI */ = {
+			isa = PBXGroup;
+			children = (
+				DE9C3DF823C5F3980072B154 /* NewsAPIEndPoints.swift */,
+				DE9C3DFA23C5F4090072B154 /* NewsAPIConstants.swift */,
+				DE9C3DFC23C5F5F20072B154 /* NewsAPIRemoteDataSource.swift */,
+			);
+			path = NewsAPI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -116,6 +191,7 @@
 				DE9C3DC623C5EB3E0072B154 /* Sources */,
 				DE9C3DC723C5EB3E0072B154 /* Frameworks */,
 				DE9C3DC823C5EB3E0072B154 /* Resources */,
+				9269BFD762A38FE8AF4E44D8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,6 +271,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9269BFD762A38FE8AF4E44D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NewsApp/Pods-NewsApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NewsApp/Pods-NewsApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NewsApp/Pods-NewsApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -202,11 +295,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE9C3DF423C5F2C50072B154 /* Dictionary+merge.swift in Sources */,
 				DE9C3DE323C5EE430072B154 /* Article.swift in Sources */,
 				DE9C3DD223C5EB3E0072B154 /* ViewController.swift in Sources */,
 				DE9C3DCE23C5EB3E0072B154 /* AppDelegate.swift in Sources */,
 				DE9C3DE523C5EE590072B154 /* Source.swift in Sources */,
+				DE9C3DEA23C5F09D0072B154 /* RemoteDataSource.swift in Sources */,
+				DE9C3DEE23C5F17A0072B154 /* Endpointed.swift in Sources */,
+				DE9C3DEC23C5F1260072B154 /* RemoteDataSourceServiceError.swift in Sources */,
+				DE9C3DF923C5F3980072B154 /* NewsAPIEndPoints.swift in Sources */,
 				DE9C3DD023C5EB3E0072B154 /* SceneDelegate.swift in Sources */,
+				DE9C3DF123C5F20C0072B154 /* HTTPMethod+HTTPSchema.swift in Sources */,
+				DE9C3DF623C5F3180072B154 /* Error+Code.swift in Sources */,
+				DE9C3DFD23C5F5F20072B154 /* NewsAPIRemoteDataSource.swift in Sources */,
+				DE9C3DFB23C5F4090072B154 /* NewsAPIConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

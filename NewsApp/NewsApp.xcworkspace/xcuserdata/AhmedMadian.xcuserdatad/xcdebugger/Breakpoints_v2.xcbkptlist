@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "CE2E364E-5DE1-483F-AC49-1CCBB06D1941"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A52CFA49-926B-411D-8920-6A5C65A0117C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsApp/Persistence/RemoteDataSource/RemoteDataSource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "execute(endPoint:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A52CFA49-926B-411D-8920-6A5C65A0117C - 46e6b7d8c98a4b15"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in NewsApp):NewsApp.RemoteDataSource.execute&lt;A where A1: Swift.Decodable, A1: Swift.Encodable&gt;(endPoint: NewsApp.Endpointed, completionHandler: (Swift.Result&lt;A1, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "NewsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/AhmedMadian/Developer/EmberMedicalTask/NewsApp/NewsApp/Persistence/RemoteDataSource/RemoteDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "712">
+               </Location>
+               <Location
+                  uuid = "A52CFA49-926B-411D-8920-6A5C65A0117C - 36555ed03e2a3bcf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Foundation.Data&gt;) -&gt; () in (extension in NewsApp):NewsApp.RemoteDataSource.execute&lt;A where A1: Swift.Decodable, A1: Swift.Encodable&gt;(endPoint: NewsApp.Endpointed, completionHandler: (Swift.Result&lt;A1, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "NewsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/AhmedMadian/Developer/EmberMedicalTask/NewsApp/NewsApp/Persistence/RemoteDataSource/RemoteDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "405">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
