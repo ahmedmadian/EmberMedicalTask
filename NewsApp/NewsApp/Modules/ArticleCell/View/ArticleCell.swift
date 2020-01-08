@@ -10,15 +10,20 @@ import UIKit
 
 class ArticleCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    //MARK:- IBOutlet
+    @IBOutlet weak var posterImageView: UIImageView!
+    @IBOutlet weak var headlineLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    
+    static func instantiateFromNib(with viewModel: ArticleViewModel) -> ArticleCell {
+        let cell = UINib(nibName: typeName, bundle: .main).instantiate(withOwner: self, options: nil).first as! ArticleCell
+           return cell
+       }
+    
+    func config(with viewModel: ArticleViewModel) {
+        self.headlineLabel.text = viewModel.headline
+        self.dateLabel.text = viewModel.date
     }
     
 }

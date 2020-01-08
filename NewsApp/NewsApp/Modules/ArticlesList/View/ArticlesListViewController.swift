@@ -9,14 +9,19 @@
 import UIKit
 
 class ArticlesListViewController: BaseViewController, Storyboarded {
-   
-   
+
     static var storyboardName: Storyboards { return .main}
+    
+    //MARK:- IBOutlet
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.showLoader(with: "Loading...")
+        registerCells()
     }
-
-
+    
+    private func registerCells() {
+        tableView.register(UINib(nibName: ArticleCell.typeName, bundle: Bundle.main), forCellReuseIdentifier: ArticleCell.typeName)
+    }
+    
 }
