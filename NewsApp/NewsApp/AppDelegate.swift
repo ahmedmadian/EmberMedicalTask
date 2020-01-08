@@ -15,9 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        NewsAPIRemoteDataSource.shared.fetchArticles(with: NewsAPIEndPoints.topHeadlines) { (res, err) in
-            print(res?[0].articleDescription)
-        }
         return true
     }
 
