@@ -12,4 +12,10 @@ class ArticleViewModel {
     var posterImageURL: String?
     var headline: String?
     var date: String?
+    
+    init(article: Article) {
+        self.posterImageURL = article.url
+        self.headline = article.title
+        self.date = article.publishedAt
+    }
 }

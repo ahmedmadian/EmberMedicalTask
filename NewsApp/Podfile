@@ -5,6 +5,8 @@ def swiftPods
   pod 'Alamofire'
   pod "SwiftSpinner"
   pod 'SwiftMessages'
+  pod 'RxCocoa', '~> 5.0'
+  pod 'RxSwift', '~> 5.0'
 end
 
 target 'NewsApp' do

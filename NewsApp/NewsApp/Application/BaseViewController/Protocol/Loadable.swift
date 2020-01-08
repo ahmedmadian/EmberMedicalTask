@@ -13,14 +13,3 @@ protocol Loadable: class {
     func showLoader(with message:String)
     func hideLoader()
 }
-
-extension Loadable {
-    
-    func showLoader(with message: String) {
-        SwiftSpinner.show(message)
-    }
-    
-    func hideLoader() {
-        SwiftSpinner.hide()
-    }
-}
