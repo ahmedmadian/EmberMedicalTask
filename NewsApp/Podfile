@@ -3,6 +3,8 @@
 
 def swiftPods
   pod 'Alamofire'
+  pod "SwiftSpinner"
+  pod 'SwiftMessages'
 end
 
 target 'NewsApp' do
