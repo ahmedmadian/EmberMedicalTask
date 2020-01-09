@@ -45,6 +45,11 @@ class ArticlesListViewController: BaseViewController, Storyboarded {
         setupNavigationItem()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupFilterButton()
+
+    }
     // MARK:- Methods
     func setupNavigationItem(){
         navigationItem.largeTitleDisplayMode = .automatic
@@ -55,7 +60,11 @@ class ArticlesListViewController: BaseViewController, Storyboarded {
     }
     
     func setupFilterButton() {
-        self.navigationController?.navigationItem.rightBarButtonItem = filterBarButton
+        self.navigationItem.rightBarButtonItem = filterBarButton
+    }
+    
+    @objc func add() {
+        print("add")
     }
     
     private func setupTableView() {
@@ -66,7 +75,6 @@ class ArticlesListViewController: BaseViewController, Storyboarded {
         super.hideLoader()
         refreshControl.endRefreshing()
     }
-    
     
     private func bindViewModel() {
         let viewDidAppear = self.rx.sentMessage(#selector(UIViewController.viewDidAppear(_:)))

@@ -24,6 +24,7 @@ class ArticleDetailViewController: BaseViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        navigationItem.largeTitleDisplayMode = .never
     }
     
     private func bindViewModel() {
