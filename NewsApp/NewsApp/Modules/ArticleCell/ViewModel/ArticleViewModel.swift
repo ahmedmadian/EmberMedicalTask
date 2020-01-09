@@ -12,12 +12,17 @@ class ArticleViewModel {
     var posterImageURL: String?
     var headline: String?
     var date: String?
-    
+    var authorName: String?
+    var articleDescription: String?
+    var url: String?
     
     init(article: Article) {
         self.posterImageURL = article.urlToImage
         self.headline = article.title
         self.date = formatDate(with: article.publishedAt ?? "")
+        self.authorName = article.author
+        self.articleDescription = article.articleDescription
+        self.url = article.url
     }
     
     func formatDate(with stringDate: String) -> String {

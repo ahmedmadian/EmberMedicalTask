@@ -11,6 +11,7 @@ import XCoordinator
 
 enum AppStartUpRoute: Route {
     case home
+    case details(viewModel: ArticleViewModel)
 }
 
 class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
@@ -25,6 +26,10 @@ class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
         case .home:
             let articlesView = ArticlesModuleBuilder.makeModule(router: unownedRouter)
             return .push(articlesView)
+        case .details(let viewModel):
+            //print(viewModel.headline)
+            let detailView = ArticleDetailModuleBuilder.makeModule(router: unownedRouter, dataSource: viewModel)
+            return .push(detailView)
         }
     }
     
@@ -33,6 +38,6 @@ class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
                 nav.navigationBar.backgroundColor = UIColor.black
                 nav.navigationBar.barTintColor = UIColor.black
                 nav.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)]
-                nav.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
+                nav.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)]
     }
 }

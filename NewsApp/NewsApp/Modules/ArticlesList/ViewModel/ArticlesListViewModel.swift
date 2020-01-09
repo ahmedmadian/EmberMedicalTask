@@ -42,9 +42,7 @@ extension ArticlesListViewModel {
     
     func transform(input: ArticlesListViewModel.Input) -> ArticlesListViewModel.Output {
         
-        input.selectItem.drive(onNext: { (item) in
-            print(item.headline)
-            })
+        input.selectItem.drive(onNext: {self.router.trigger(.details(viewModel: $0))})
 
         let activityIndicator = ActivityIndicator()
         let loading = activityIndicator.asDriver()
