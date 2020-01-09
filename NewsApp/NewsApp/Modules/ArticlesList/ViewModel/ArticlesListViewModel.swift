@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import XCoordinator
 
 class ArticlesListViewModel: ViewModelType {
 
@@ -25,9 +26,15 @@ class ArticlesListViewModel: ViewModelType {
     }
     
     // MARK:- Properties
-    private let articlesService: NeswAPIDataSourceProtocol = NewsAPIRemoteDataSource.shared
+    private let router: UnownedRouter<AppStartUpRoute>
+    private let articlesService: NeswAPIDataSourceProtocol
     private var articales: Driver<[ArticleViewModel]>?
     
+   // MARK:- Initialization
+    init(router: UnownedRouter<AppStartUpRoute>, dataSource: NeswAPIDataSourceProtocol) {
+        self.router = router
+        self.articlesService = dataSource
+    }
 }
 
 // MARK:- Transfrom

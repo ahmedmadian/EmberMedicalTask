@@ -14,9 +14,12 @@ class ArticlesListViewController: BaseViewController, Storyboarded {
 
     // MARK:- Properties
     static var storyboardName: Storyboards { return .main}
-    var viewModel: ArticlesListViewModel! = ArticlesListViewModel()
+    var viewModel: ArticlesListViewModel!
     let disposeBag = DisposeBag()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     lazy var refreshControl: UIRefreshControl = {
        let controller = UIRefreshControl()
         controller.backgroundColor =  #colorLiteral(red: 0.6682028062, green: 0.6682028062, blue: 0.6682028062, alpha: 1)
@@ -44,7 +47,6 @@ class ArticlesListViewController: BaseViewController, Storyboarded {
     
     // MARK:- Methods
     func setupNavigationItem(){
-        self.navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.largeTitleDisplayMode = .automatic
     }
     

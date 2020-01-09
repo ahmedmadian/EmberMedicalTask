@@ -8,6 +8,7 @@ def swiftPods
   pod 'RxCocoa', '~> 5.0'
   pod 'RxSwift', '~> 5.0'
   pod 'Kingfisher'
+  pod 'XCoordinator'
 end
 
 target 'NewsApp' do
