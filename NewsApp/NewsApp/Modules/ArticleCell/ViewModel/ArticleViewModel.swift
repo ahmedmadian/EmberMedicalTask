@@ -13,6 +13,7 @@ class ArticleViewModel {
     var headline: String?
     var date: String?
     
+    
     init(article: Article) {
         self.posterImageURL = article.urlToImage
         self.headline = article.title

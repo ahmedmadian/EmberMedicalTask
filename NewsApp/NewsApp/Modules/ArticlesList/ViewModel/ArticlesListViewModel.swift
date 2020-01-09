@@ -14,6 +14,7 @@ class ArticlesListViewModel: ViewModelType {
 
     struct Input {
         let loadTrigger: Driver<Void>
+        let selectItem: Driver<ArticleViewModel>
     }
 
     struct Output {
@@ -25,19 +26,26 @@ class ArticlesListViewModel: ViewModelType {
     
     // MARK:- Properties
     private let articlesService: NeswAPIDataSourceProtocol = NewsAPIRemoteDataSource.shared
+    private var articales: Driver<[ArticleViewModel]>?
+    
 }
 
 // MARK:- Transfrom
 extension ArticlesListViewModel {
     
     func transform(input: ArticlesListViewModel.Input) -> ArticlesListViewModel.Output {
+        
+        input.selectItem.drive(onNext: { (item) in
+            print(item.headline)
+            })
+
         let activityIndicator = ActivityIndicator()
         let loading = activityIndicator.asDriver()
         
         let errorTracker = ErrorTracker()
         let errors = errorTracker.asDriver()
         
-        let articles = input.loadTrigger.flatMapLatest { _ -> Driver<[ArticleViewModel]> in
+        articales = input.loadTrigger.flatMapLatest { _ -> Driver<[ArticleViewModel]> in
             return self.articlesService.fetchArticles(with: NewsAPIEndPoints.topHeadlines)
                 .trackActivity(activityIndicator)
                 .trackError(errorTracker)
@@ -46,7 +54,7 @@ extension ArticlesListViewModel {
         }
         
         let title = Observable<String>.just("Top Headlines").asDriverOnErrorJustComplete()
-        return Output(loading: loading, articles: articles, title: title, error: errors)
+        return Output(loading: loading, articles: articales!, title: title, error: errors)
     }
     
 }

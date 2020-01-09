@@ -16,10 +16,18 @@ class ArticlesListViewController: BaseViewController, Storyboarded {
     static var storyboardName: Storyboards { return .main}
     var viewModel: ArticlesListViewModel! = ArticlesListViewModel()
     let disposeBag = DisposeBag()
+    
     lazy var refreshControl: UIRefreshControl = {
        let controller = UIRefreshControl()
         controller.backgroundColor =  #colorLiteral(red: 0.6682028062, green: 0.6682028062, blue: 0.6682028062, alpha: 1)
         return controller
+    }()
+    
+    var filterBarButton: UIBarButtonItem = {
+        let button = UIBarButtonItem()
+        button.style = .plain
+        button.image = UIImage(named: "filter")
+        return button
     }()
     
     //MARK:- IBOutlet
@@ -27,6 +35,7 @@ class ArticlesListViewController: BaseViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupFilterButton()
         setupTableView()
         registerCells()
         bindViewModel()
@@ -35,7 +44,7 @@ class ArticlesListViewController: BaseViewController, Storyboarded {
     
     // MARK:- Methods
     func setupNavigationItem(){
-        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.largeTitleDisplayMode = .automatic
     }
     
@@ -43,7 +52,12 @@ class ArticlesListViewController: BaseViewController, Storyboarded {
         tableView.register(UINib(nibName: ArticleCell.typeName, bundle: Bundle.main), forCellReuseIdentifier: ArticleCell.typeName)
     }
     
-    private func setupTableView() {        tableView.addSubview(refreshControl)
+    func setupFilterButton() {
+        self.navigationController?.navigationItem.rightBarButtonItem = filterBarButton
+    }
+    
+    private func setupTableView() {
+        tableView.addSubview(refreshControl)
     }
     
     override func hideLoader() {
@@ -53,7 +67,7 @@ class ArticlesListViewController: BaseViewController, Storyboarded {
     
     
     private func bindViewModel() {
-        let viewDidAppear = rx.sentMessage(#selector(UIViewController.viewDidAppear(_:)))
+        let viewDidAppear = self.rx.sentMessage(#selector(UIViewController.viewDidAppear(_:)))
         .take(1)
         .mapToVoid()
         .asDriverOnErrorJustComplete()
@@ -62,7 +76,9 @@ class ArticlesListViewController: BaseViewController, Storyboarded {
         .controlEvent(.valueChanged)
         .asDriver()
         
-        let output = viewModel.transform(input: ArticlesListViewModel.Input(loadTrigger: Driver.merge(viewDidAppear, pullToRefresh)))
+        let didSelectRowAt = tableView.rx.modelSelected(ArticleViewModel.self).asDriverOnErrorJustComplete()
+        
+        let output = viewModel.transform(input: ArticlesListViewModel.Input(loadTrigger: Driver.merge(viewDidAppear, pullToRefresh), selectItem: didSelectRowAt))
         
         output.loading.asObservable().subscribe(onNext: { (isLoading) in
             if isLoading {
@@ -77,6 +93,7 @@ class ArticlesListViewController: BaseViewController, Storyboarded {
         }).disposed(by: disposeBag)
 
         output.title.drive(navigationItem.rx.title).disposed(by: disposeBag)
+        
         
         output.articles.drive(tableView.rx.items(cellIdentifier: ArticleCell.typeName, cellType: ArticleCell.self)) { tableView, viewModel, cell in
             cell.config(with: viewModel)
