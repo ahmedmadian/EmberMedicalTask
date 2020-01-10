@@ -36,7 +36,7 @@ class ArticleDetailViewModel: ViewModelType {
     
     func transform(input: ArticleDetailViewModel.Input) -> ArticleDetailViewModel.Output {
         let headline = Observable<String>.just(article.headline!).asDriverOnErrorJustComplete()
-        let author = Observable<String>.just("By: \(article.authorName!)").asDriverOnErrorJustComplete()
+        let author = Observable<String>.just("By: \(article.authorName ?? "")").asDriverOnErrorJustComplete()
         let content = Observable<String>.just(article.articleDescription!).asDriverOnErrorJustComplete()
         let sourceURL = Observable<String>.just(article.url!).asDriverOnErrorJustComplete()
 

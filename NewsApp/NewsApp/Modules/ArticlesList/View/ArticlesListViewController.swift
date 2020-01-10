@@ -63,10 +63,6 @@ class ArticlesListViewController: BaseViewController, Storyboarded {
         self.navigationItem.rightBarButtonItem = filterBarButton
     }
     
-    @objc func add() {
-        print("add")
-    }
-    
     private func setupTableView() {
         tableView.addSubview(refreshControl)
     }
@@ -86,9 +82,11 @@ class ArticlesListViewController: BaseViewController, Storyboarded {
         .controlEvent(.valueChanged)
         .asDriver()
         
+        let filterTriggered = filterBarButton.rx.tap.asDriver()
+        
         let didSelectRowAt = tableView.rx.modelSelected(ArticleViewModel.self).asDriverOnErrorJustComplete()
         
-        let output = viewModel.transform(input: ArticlesListViewModel.Input(loadTrigger: Driver.merge(viewDidAppear, pullToRefresh), selectItem: didSelectRowAt))
+        let output = viewModel.transform(input: ArticlesListViewModel.Input(loadTrigger: Driver.merge(viewDidAppear, pullToRefresh), selectItem: didSelectRowAt, filterTrigger: filterTriggered))
         
         output.loading.asObservable().subscribe(onNext: { (isLoading) in
             if isLoading {
@@ -108,6 +106,9 @@ class ArticlesListViewController: BaseViewController, Storyboarded {
         output.articles.drive(tableView.rx.items(cellIdentifier: ArticleCell.typeName, cellType: ArticleCell.self)) { tableView, viewModel, cell in
             cell.config(with: viewModel)
         }.disposed(by: disposeBag)
+        
+        output.filterTriggered.drive().disposed(by: disposeBag)
+        output.selectedItem.drive().disposed(by: disposeBag)
     }
     
     

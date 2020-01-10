@@ -10,8 +10,6 @@ import Foundation
 import XCoordinator
 
 class ArticlesModuleBuilder {
-    // MARK:- Methods
-   
     static func makeModule(router: UnownedRouter<AppStartUpRoute>,dataSource: NeswAPIDataSourceProtocol = NewsAPIRemoteDataSource.shared) -> UIViewController {
         
         let viewController = ArticlesListViewController.instantiate() as! ArticlesListViewController

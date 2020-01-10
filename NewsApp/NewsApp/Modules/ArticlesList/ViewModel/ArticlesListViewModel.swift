@@ -16,6 +16,7 @@ class ArticlesListViewModel: ViewModelType {
     struct Input {
         let loadTrigger: Driver<Void>
         let selectItem: Driver<ArticleViewModel>
+        let filterTrigger: Driver<Void>
     }
 
     struct Output {
@@ -23,6 +24,8 @@ class ArticlesListViewModel: ViewModelType {
         let articles: Driver<[ArticleViewModel]>
         let title: Driver<String>
         let error: Driver<Error>
+        let selectedItem: Driver<ArticleViewModel>
+        let filterTriggered: Driver<Void>
     }
     
     // MARK:- Properties
@@ -42,7 +45,9 @@ extension ArticlesListViewModel {
     
     func transform(input: ArticlesListViewModel.Input) -> ArticlesListViewModel.Output {
         
-        input.selectItem.drive(onNext: {self.router.trigger(.details(viewModel: $0))})
+        let selectedItem = input.selectItem.do(onNext: {self.router.trigger(.details(viewModel: $0))})
+        
+        let filtered = input.filterTrigger.do(onNext: {self.router.trigger(.filter)})
 
         let activityIndicator = ActivityIndicator()
         let loading = activityIndicator.asDriver()
@@ -59,7 +64,7 @@ extension ArticlesListViewModel {
         }
         
         let title = Observable<String>.just("Top Headlines").asDriverOnErrorJustComplete()
-        return Output(loading: loading, articles: articales!, title: title, error: errors)
+        return Output(loading: loading, articles: articales!, title: title, error: errors, selectedItem: selectedItem, filterTriggered: filtered)
     }
     
 }
