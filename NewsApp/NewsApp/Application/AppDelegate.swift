@@ -12,7 +12,6 @@ import XCoordinator
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
     private lazy var mainWindow: UIWindow = UIWindow(frame: UIScreen.main.bounds)
     private let router = AppStartUpCoordinator().strongRouter
     
@@ -20,7 +19,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         router.setRoot(for: mainWindow)
         return true
     }
-
-
 }
 

@@ -10,8 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class ArticleDetailViewController: BaseViewController, Storyboarded {
-    static var storyboardName: Storyboards {return .main}
+class ArticleDetailViewController: BaseViewController {
 
     @IBOutlet weak var headlineLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!

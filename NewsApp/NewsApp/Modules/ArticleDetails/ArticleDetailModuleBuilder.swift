@@ -13,8 +13,7 @@ class ArticleDetailModuleBuilder {
     // MARK:- Methods
     
      static func makeModule(router: UnownedRouter<AppStartUpRoute>,dataSource: ArticleViewModel) -> UIViewController {
-         
-         let viewController = ArticleDetailViewController.instantiate() as! ArticleDetailViewController
+        let viewController: ArticleDetailViewController = Storyboards.main.instantiate()!
          viewController.viewModel = ArticleDetailViewModel(router: router, article: dataSource)
          return viewController
      }

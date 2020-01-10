@@ -11,10 +11,10 @@ import XCoordinator
 
 class FilterModuleBuilder {
     
-    // MARK:- Methods
-     static func makeModule(router: UnownedRouter<AppStartUpRoute>) -> UIViewController {
-         let viewController = FilterViewController.instantiate() as! FilterViewController
-         viewController.viewModel = FilterViewModel(router: router)
-         return viewController
-     }
+    static func makeModule(router: UnownedRouter<AppStartUpRoute>) -> UIViewController {
+        let viewController: FilterViewController = Storyboards.main.instantiate()!
+        viewController.viewModel = FilterViewModel(router: router)
+        return viewController
+    }
+    
 }

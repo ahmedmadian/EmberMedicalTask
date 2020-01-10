@@ -10,8 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class FilterViewController: BaseViewController,Storyboarded {
-    static var storyboardName: Storyboards {return .main}
+class FilterViewController: BaseViewController {
     private let disposeBag = DisposeBag()
     
     @IBOutlet weak var exitButton: UIButton!

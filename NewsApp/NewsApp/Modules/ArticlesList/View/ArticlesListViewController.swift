@@ -10,10 +10,9 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-class ArticlesListViewController: BaseViewController, Storyboarded {
+class ArticlesListViewController: BaseViewController {
 
     // MARK:- Properties
-    static var storyboardName: Storyboards { return .main}
     var viewModel: ArticlesListViewModel!
     let disposeBag = DisposeBag()
     

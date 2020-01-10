@@ -10,9 +10,9 @@ import Foundation
 import XCoordinator
 
 class ArticlesModuleBuilder {
+    
     static func makeModule(router: UnownedRouter<AppStartUpRoute>,dataSource: NeswAPIDataSourceProtocol = NewsAPIRemoteDataSource.shared) -> UIViewController {
-        
-        let viewController = ArticlesListViewController.instantiate() as! ArticlesListViewController
+        let viewController: ArticlesListViewController = Storyboards.main.instantiate()!
         viewController.viewModel = ArticlesListViewModel(router: router, dataSource: dataSource)
         return viewController
     }
