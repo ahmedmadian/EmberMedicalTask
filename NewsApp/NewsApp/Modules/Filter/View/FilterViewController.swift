@@ -13,17 +13,20 @@ import RxCocoa
 class FilterViewController: BaseViewController {
     private let disposeBag = DisposeBag()
     
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var exitButton: UIButton!
 
+    @IBOutlet weak var cancelButton: UIButton!
     var viewModel: FilterViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        containerView.makeRoundedCorners(with: 20)
         bindViewModel()
     }
     
     private func bindViewModel() {
-        let input = FilterViewModel.Input(exitTrigger: exitButton.rx.tap.asDriver())
+        let input = FilterViewModel.Input(exitTrigger: Driver.merge(exitButton.rx.tap.asDriver(), cancelButton.rx.tap.asDriver()))
         let output = viewModel.transform(input: input)
         
         output.exitTriggered.drive().disposed(by: disposeBag)
