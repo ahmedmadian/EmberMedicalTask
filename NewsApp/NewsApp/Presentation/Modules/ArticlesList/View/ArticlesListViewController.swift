@@ -58,12 +58,11 @@ class ArticlesListViewController: BaseViewController {
         let width = self.view.frame.width
         
         let titleView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: (self.navigationController?.navigationBar.frame.height)!))
-        
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: titleView.frame.width, height: titleView.frame.height))
         
         titleLabel.text = title
         titleLabel.textColor = .white
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
         titleView.addSubview(titleLabel)
         
         navigationItem.titleView = titleView

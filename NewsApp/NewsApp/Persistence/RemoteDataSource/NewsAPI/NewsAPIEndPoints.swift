@@ -52,7 +52,7 @@ enum NewsAPIEndPoints: String, Endpointed {
     var parameters: [String : Any] {
         switch self {
         case .topHeadlines:
-            return ["country": "us"]
+            return [:]
         case .sources:
             return [:]
         }

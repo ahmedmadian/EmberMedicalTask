@@ -24,7 +24,7 @@ class ArticleCell: UITableViewCell {
     }
     
     func config(with viewModel: ArticleViewModel) {
-        posterImageView.makeRoundedCorners(with: 8.0)
+        posterImageView.makeRoundedCorners(with: 15.0)
         containerView.makeRoundedCorners(with: 20)
         posterImageView.kf.setImage(with: URL.init(string: viewModel.posterImageURL ?? ""), options: [
         .scaleFactor(UIScreen.main.scale),

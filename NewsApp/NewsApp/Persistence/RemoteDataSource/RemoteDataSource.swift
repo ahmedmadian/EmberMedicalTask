@@ -15,7 +15,7 @@ protocol RemoteDataSource {
 extension RemoteDataSource {
     func execute<Model:Codable>(endPoint: Endpointed, completionHandler: @escaping (Swift.Result<Model, Error>) -> Void ) {
         
-        var generalParameters = [String:Any]()
+        var generalParameters: [String:Any] = ["language" : "en"]
         generalParameters.merge(with: endPoint.parameters)
         
         var generalHeaders = [String: String]()
