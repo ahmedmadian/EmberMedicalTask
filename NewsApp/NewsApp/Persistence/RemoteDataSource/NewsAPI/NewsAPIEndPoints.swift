@@ -11,39 +11,40 @@ import Foundation
 enum NewsAPIEndPoints: String, Endpointed {
     
     case topHeadlines = "top-headlines"
+    case sources = "sources"
     
     //MARK:- Properties
     private var schema: HTTPSchema {
         switch self {
-        case .topHeadlines:
+        default :
             return .HTTPS
         }
     }
     
     private var host: String {
         switch self {
-        case .topHeadlines:
+        default :
             return "newsapi.org"
         }
     }
     
     private var path: String {
         switch self {
-        case .topHeadlines:
+        default :
             return "v2"
         }
     }
     
     private var base: String {
         switch self {
-        case .topHeadlines:
+        default:
             return "\(schema.rawValue)://\(host)"
         }
     }
     
     var fullURL: String {
         switch self {
-        case .topHeadlines:
+        default :
             return "\(self.base)/\(self.path)/\(self.rawValue)"
         }
     }
@@ -52,6 +53,8 @@ enum NewsAPIEndPoints: String, Endpointed {
         switch self {
         case .topHeadlines:
             return ["country": "us"]
+        case .sources:
+            return [:]
         }
     }
     
@@ -62,6 +65,8 @@ enum NewsAPIEndPoints: String, Endpointed {
     var method: HTTPMethod {
         switch self {
         case .topHeadlines:
+            return .get
+        case .sources:
             return .get
         }
     }
