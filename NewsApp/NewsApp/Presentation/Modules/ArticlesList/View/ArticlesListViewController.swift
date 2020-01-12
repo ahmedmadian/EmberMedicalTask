@@ -47,7 +47,6 @@ class ArticlesListViewController: BaseViewController {
         setupNavigationBar(title: viewModel.title)
         setupTableView()
         registerCells()
-        setupNavigationItem()
         self.navigationItem.rightBarButtonItem = filterButton
     }
     
@@ -66,10 +65,6 @@ class ArticlesListViewController: BaseViewController {
         titleView.addSubview(titleLabel)
         
         navigationItem.titleView = titleView
-    }
-    
-    func setupNavigationItem(){
-        self.navigationItem.title = viewModel.title
         navigationItem.largeTitleDisplayMode = .never
     }
     
