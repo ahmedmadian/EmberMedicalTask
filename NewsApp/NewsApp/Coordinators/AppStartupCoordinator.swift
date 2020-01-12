@@ -14,6 +14,7 @@ enum AppStartUpRoute: Route {
     case details(viewModel: ArticleViewModel)
     case filter
     case backToHome
+    case filteData
 }
 
 class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
@@ -33,9 +34,11 @@ class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
             return .push(detailView)
         case .filter :
             let filterView = FilterModuleBuilder.makeModule(router: unownedRouter)
-            return .presentFullScreen(filterView, animation: .fade)
+            return .presentOverCurrentContext(filterView)
         case .backToHome:
-            return .dismiss(animation: .fade)
+            return .dismiss()
+        case .filteData:
+            return .dismiss()
         }
     }
     

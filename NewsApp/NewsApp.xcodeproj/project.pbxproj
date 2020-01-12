@@ -11,6 +11,14 @@
 		DE0AAE5523CA554A0080EE8B /* Animation+Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AAE5423CA554A0080EE8B /* Animation+Fade.swift */; };
 		DE0AAEEF23CB3E770080EE8B /* ArticlesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AAEEE23CB3E770080EE8B /* ArticlesUseCase.swift */; };
 		DE0AAEF223CB3F790080EE8B /* ArticlesDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AAEF123CB3F790080EE8B /* ArticlesDataRepository.swift */; };
+		DE0AAEF723CB9FFB0080EE8B /* FilterDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AAEF623CB9FFB0080EE8B /* FilterDataViewController.swift */; };
+		DE0AAEFE23CBA0630080EE8B /* FilterCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AAEFC23CBA0630080EE8B /* FilterCellTableViewCell.swift */; };
+		DE0AAEFF23CBA0630080EE8B /* FilterCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE0AAEFD23CBA0630080EE8B /* FilterCellTableViewCell.xib */; };
+		DE0AAF0123CBA09F0080EE8B /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AAF0023CBA09F0080EE8B /* Country.swift */; };
+		DE0AAF0523CBA4BA0080EE8B /* countryISO2.json in Resources */ = {isa = PBXBuildFile; fileRef = DE0AAF0423CBA4BA0080EE8B /* countryISO2.json */; };
+		DE0AAF0723CBAA000080EE8B /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AAF0623CBAA000080EE8B /* LocalDataSource.swift */; };
+		DE0AAF0B23CBAB290080EE8B /* CountryDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AAF0A23CBAB290080EE8B /* CountryDataRepository.swift */; };
+		DE0AAF0E23CBADF70080EE8B /* CountryCodeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AAF0D23CBADF70080EE8B /* CountryCodeDataSource.swift */; };
 		DE0E304423C7C61900F34C03 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E304323C7C61900F34C03 /* FilterViewController.swift */; };
 		DE0E304823C7C64B00F34C03 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E304723C7C64B00F34C03 /* FilterViewModel.swift */; };
 		DE0E304A23C7C67D00F34C03 /* FilterModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E304923C7C67D00F34C03 /* FilterModuleBuilder.swift */; };
@@ -60,6 +68,14 @@
 		DE0AAE5423CA554A0080EE8B /* Animation+Fade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation+Fade.swift"; sourceTree = "<group>"; };
 		DE0AAEEE23CB3E770080EE8B /* ArticlesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesUseCase.swift; sourceTree = "<group>"; };
 		DE0AAEF123CB3F790080EE8B /* ArticlesDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesDataRepository.swift; sourceTree = "<group>"; };
+		DE0AAEF623CB9FFB0080EE8B /* FilterDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDataViewController.swift; sourceTree = "<group>"; };
+		DE0AAEFC23CBA0630080EE8B /* FilterCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCellTableViewCell.swift; sourceTree = "<group>"; };
+		DE0AAEFD23CBA0630080EE8B /* FilterCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCellTableViewCell.xib; sourceTree = "<group>"; };
+		DE0AAF0023CBA09F0080EE8B /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		DE0AAF0423CBA4BA0080EE8B /* countryISO2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countryISO2.json; sourceTree = "<group>"; };
+		DE0AAF0623CBAA000080EE8B /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
+		DE0AAF0A23CBAB290080EE8B /* CountryDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDataRepository.swift; sourceTree = "<group>"; };
+		DE0AAF0D23CBADF70080EE8B /* CountryCodeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodeDataSource.swift; sourceTree = "<group>"; };
 		DE0E304323C7C61900F34C03 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		DE0E304723C7C64B00F34C03 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		DE0E304923C7C67D00F34C03 /* FilterModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModuleBuilder.swift; sourceTree = "<group>"; };
@@ -163,8 +179,52 @@
 			isa = PBXGroup;
 			children = (
 				DE0AAEF123CB3F790080EE8B /* ArticlesDataRepository.swift */,
+				DE0AAF0A23CBAB290080EE8B /* CountryDataRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		DE0AAEF523CB9FB10080EE8B /* FilterData */ = {
+			isa = PBXGroup;
+			children = (
+				DE0AAEFA23CBA03B0080EE8B /* Cell */,
+				DE0AAEF923CBA0160080EE8B /* ViewModel */,
+				DE0AAEF823CBA0090080EE8B /* View */,
+			);
+			path = FilterData;
+			sourceTree = "<group>";
+		};
+		DE0AAEF823CBA0090080EE8B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DE0AAEF623CB9FFB0080EE8B /* FilterDataViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DE0AAEF923CBA0160080EE8B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DE0AAEFA23CBA03B0080EE8B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DE0AAEFC23CBA0630080EE8B /* FilterCellTableViewCell.swift */,
+				DE0AAEFD23CBA0630080EE8B /* FilterCellTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		DE0AAF0C23CBADD90080EE8B /* CountryCodesStore */ = {
+			isa = PBXGroup;
+			children = (
+				DE0AAF0423CBA4BA0080EE8B /* countryISO2.json */,
+				DE0AAF0D23CBADF70080EE8B /* CountryCodeDataSource.swift */,
+			);
+			path = CountryCodesStore;
 			sourceTree = "<group>";
 		};
 		DE0E304223C7C60000F34C03 /* Filter */ = {
@@ -274,6 +334,7 @@
 			children = (
 				DE9C3DE223C5EE430072B154 /* Article.swift */,
 				DE9C3DE423C5EE590072B154 /* Source.swift */,
+				DE0AAF0023CBA09F0080EE8B /* Country.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -303,6 +364,8 @@
 		DE9C3DE823C5EFCA0072B154 /* LocalDataSource */ = {
 			isa = PBXGroup;
 			children = (
+				DE0AAF0623CBAA000080EE8B /* LocalDataSource.swift */,
+				DE0AAF0C23CBADD90080EE8B /* CountryCodesStore */,
 			);
 			path = LocalDataSource;
 			sourceTree = "<group>";
@@ -352,6 +415,7 @@
 		DE9C3E0223C5FF7C0072B154 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DE0AAEF523CB9FB10080EE8B /* FilterData */,
 				DE0E304223C7C60000F34C03 /* Filter */,
 				DE412DA423C6CC6200C85EA1 /* ArticleDetails */,
 				DE9C3E0F23C605CA0072B154 /* ArticleCell */,
@@ -513,7 +577,9 @@
 			files = (
 				DE9C3E1323C605F50072B154 /* ArticleCell.xib in Resources */,
 				DE9C3DDA23C5EB3F0072B154 /* LaunchScreen.storyboard in Resources */,
+				DE0AAEFF23CBA0630080EE8B /* FilterCellTableViewCell.xib in Resources */,
 				DE9C3DD723C5EB3F0072B154 /* Assets.xcassets in Resources */,
+				DE0AAF0523CBA4BA0080EE8B /* countryISO2.json in Resources */,
 				DE9C3DD523C5EB3E0072B154 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -575,12 +641,15 @@
 				DE412D9323C6745F00C85EA1 /* ErrorTracker.swift in Sources */,
 				DE0E304823C7C64B00F34C03 /* FilterViewModel.swift in Sources */,
 				DE9C3DCE23C5EB3E0072B154 /* AppDelegate.swift in Sources */,
+				DE0AAF0B23CBAB290080EE8B /* CountryDataRepository.swift in Sources */,
 				DE412D9A23C6B36400C85EA1 /* AppStartupCoordinator.swift in Sources */,
 				DE412D8F23C6408100C85EA1 /* ObservableType+Ext.swift in Sources */,
 				DE0E304A23C7C67D00F34C03 /* FilterModuleBuilder.swift in Sources */,
 				DE9C3DE523C5EE590072B154 /* Source.swift in Sources */,
+				DE0AAF0E23CBADF70080EE8B /* CountryCodeDataSource.swift in Sources */,
 				DE9C3DEA23C5F09D0072B154 /* RemoteDataSource.swift in Sources */,
 				DE412D9E23C6B44900C85EA1 /* ArticlesModuleBuilder.swift in Sources */,
+				DE0AAEFE23CBA0630080EE8B /* FilterCellTableViewCell.swift in Sources */,
 				DE412D8723C635C900C85EA1 /* ViewModelType.swift in Sources */,
 				DE0AAE5523CA554A0080EE8B /* Animation+Fade.swift in Sources */,
 				DE9C3E0A23C6020A0072B154 /* Storyboards.swift in Sources */,
@@ -591,8 +660,11 @@
 				DE412D8923C63A0A00C85EA1 /* ArticleViewModel.swift in Sources */,
 				DE9C3DEC23C5F1260072B154 /* RemoteDataSourceServiceError.swift in Sources */,
 				DE9C3E0823C600C80072B154 /* ArticlesListViewController.swift in Sources */,
+				DE0AAEF723CB9FFB0080EE8B /* FilterDataViewController.swift in Sources */,
+				DE0AAF0723CBAA000080EE8B /* LocalDataSource.swift in Sources */,
 				DE0E304423C7C61900F34C03 /* FilterViewController.swift in Sources */,
 				DE412D9123C672BF00C85EA1 /* ActivityIndicator.swift in Sources */,
+				DE0AAF0123CBA09F0080EE8B /* Country.swift in Sources */,
 				DE412D8D23C63DAF00C85EA1 /* ArticlesListViewModel.swift in Sources */,
 				DE412DA723C6CC8D00C85EA1 /* ArticleDetailViewController.swift in Sources */,
 				DE412DAE23C6CD0800C85EA1 /* ArticleDetailViewModel.swift in Sources */,

@@ -1,0 +1,73 @@
+
+[
+  {
+    "name": "Bangladesh",
+    "iso2": "BD"
+  },
+  {
+    "name": "Belgium",
+    "iso2": "BE"
+  },
+  {
+    "name": "Burkina Faso",
+    "iso2": "BF"
+  },
+  {
+    "name": "Bulgaria",
+    "iso2": "BG"
+  },
+  {
+    "name": "Bosnia and Herzegovina",
+    "iso2": "BA"
+  },
+  {
+    "name": "Barbados",
+    "iso2": "BB"
+  },
+  {
+    "name": "Wallis and Futuna",
+    "iso2": "WF"
+  },
+  {
+    "name": "Saint Barthelemy"
+    "iso2": "BL"
+  },
+  {
+    "name": "Bermuda"
+    "iso2": "BM"
+  },
+  {
+    "name": "Brunei"
+    "iso2": "BN"
+  },
+  {
+    "name": "Bolivia"
+    "iso2": "BO"
+  },
+  {
+    "name": "Bahrain"
+    "iso2": "BH"
+  },
+  {
+      "iso2":"BI",
+      "name" : "Burundi"
+  },
+  {
+    "name": "Benin"
+    "iso2": "BJ"
+  },
+  {
+    "name": "Bhutan"
+    "iso2": "BT"
+  },
+  {
+    "name": "Jamaica"
+    "iso2": "JM"
+  },
+  {
+    "name": "Bouvet Island"
+    "iso2": "BV"
+  }
+]
+
+

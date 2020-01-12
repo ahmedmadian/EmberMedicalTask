@@ -157,6 +157,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4w-yE-WnG">
                                         <rect key="frame" x="316" y="12" width="50" height="50"/>
                                         <state key="normal" image="exit"/>
+                                        <connections>
+                                            <action selector="cancel_Tapped:" destination="iRU-fq-cTl" eventType="touchUpInside" id="Mi4-y2-Lyl"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="nRW-ff-7yg">
                                         <rect key="frame" x="20" y="224" width="334" height="50"/>
@@ -168,6 +171,9 @@
                                                 <state key="normal" title="CANCEL">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="cancel_Tapped:" destination="iRU-fq-cTl" eventType="touchUpInside" id="kKw-JC-WRE"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZZ-Eb-Tby">
                                                 <rect key="frame" x="192" y="0.0" width="142" height="50"/>

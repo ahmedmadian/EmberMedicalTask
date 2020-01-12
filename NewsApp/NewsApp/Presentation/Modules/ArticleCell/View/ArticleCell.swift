@@ -15,7 +15,7 @@ class ArticleCell: UITableViewCell {
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var headlineLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    
+    @IBOutlet weak var containerView: UIView!
     
     static func instantiateFromNib(with viewModel: ArticleViewModel) -> ArticleCell {
         let cell = UINib(nibName: typeName, bundle: .main).instantiate(withOwner: self, options: nil).first as! ArticleCell
@@ -25,6 +25,7 @@ class ArticleCell: UITableViewCell {
     
     func config(with viewModel: ArticleViewModel) {
         posterImageView.makeRoundedCorners(with: 8.0)
+        containerView.makeRoundedCorners(with: 20)
         posterImageView.kf.setImage(with: URL.init(string: viewModel.posterImageURL ?? ""), options: [
         .scaleFactor(UIScreen.main.scale),
         .transition(.fade(1)),
