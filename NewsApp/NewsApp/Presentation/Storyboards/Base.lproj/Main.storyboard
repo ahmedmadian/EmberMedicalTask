@@ -49,14 +49,14 @@
             <objects>
                 <viewController storyboardIdentifier="ArticleDetailViewController" id="6P9-60-YTC" customClass="ArticleDetailViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hCj-Tf-Gge">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUT-Xf-alO">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="1156"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OfP-3g-6vm" userLabel="ContectView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="512.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Headline int the top of the screen" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4oX-X0-T3I">
                                                 <rect key="frame" x="12" y="258" width="390" height="93"/>
@@ -103,6 +103,7 @@
                                             <constraint firstAttribute="trailing" secondItem="oU7-8y-Rbb" secondAttribute="trailing" constant="12" id="QlY-Fz-h3z"/>
                                             <constraint firstItem="oU7-8y-Rbb" firstAttribute="top" secondItem="4oX-X0-T3I" secondAttribute="bottom" constant="16" id="Xei-zR-KwK"/>
                                             <constraint firstItem="HZ2-ly-V2W" firstAttribute="leading" secondItem="OfP-3g-6vm" secondAttribute="leading" id="aic-Ah-g3S"/>
+                                            <constraint firstAttribute="bottom" secondItem="d8p-C1-l1X" secondAttribute="bottom" constant="25" id="bRO-W8-HcR"/>
                                             <constraint firstItem="4oX-X0-T3I" firstAttribute="top" secondItem="HZ2-ly-V2W" secondAttribute="bottom" constant="8" id="hnz-yU-OrN"/>
                                             <constraint firstItem="4oX-X0-T3I" firstAttribute="leading" secondItem="OfP-3g-6vm" secondAttribute="leading" constant="12" id="p2Z-Af-GmD"/>
                                             <constraint firstItem="d8p-C1-l1X" firstAttribute="top" secondItem="VZR-B3-Jz9" secondAttribute="bottom" constant="25" id="ttr-XO-0vD"/>
@@ -131,6 +132,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Obo-yu-n58"/>
                     </view>
+                    <size key="freeformSize" width="414" height="1200"/>
                     <connections>
                         <outlet property="authorLabel" destination="oU7-8y-Rbb" id="xJA-7Q-IXx"/>
                         <outlet property="contentLabel" destination="VZR-B3-Jz9" id="g2u-xD-pZg"/>
