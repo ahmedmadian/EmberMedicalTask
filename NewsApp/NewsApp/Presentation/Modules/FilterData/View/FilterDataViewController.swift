@@ -10,9 +10,15 @@ import UIKit
 
 class FilterDataViewController: UIViewController {
 
+    //MARK:- IBOutlet
     @IBOutlet weak var tableView: UITableView!
+    
+    // MARK:- Properties
+    var viewModel: FilterDataViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 }
+
+

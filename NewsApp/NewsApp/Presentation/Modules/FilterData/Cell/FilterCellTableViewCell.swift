@@ -10,7 +10,17 @@ import UIKit
 
 class FilterCellTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    //MARK: IBOutlet
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    //MARK:- Methods
+    static func instantiateFromNib(with viewModel: FilterCellViewModel) -> FilterCellTableViewCell {
+        let cell = UINib(nibName: typeName, bundle: .main).instantiate(withOwner: self, options: nil).first as! FilterCellTableViewCell
+        cell.configCell(with: viewModel)
+        return cell
+    }
+    
+    func configCell(with viewModel: FilterCellViewModel) {
+        titleLabel.text = viewModel.title
     }
 }

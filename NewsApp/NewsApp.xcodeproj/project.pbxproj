@@ -19,6 +19,10 @@
 		DE0AAF0723CBAA000080EE8B /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AAF0623CBAA000080EE8B /* LocalDataSource.swift */; };
 		DE0AAF0B23CBAB290080EE8B /* CountryDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AAF0A23CBAB290080EE8B /* CountryDataRepository.swift */; };
 		DE0AAF0E23CBADF70080EE8B /* CountryCodeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AAF0D23CBADF70080EE8B /* CountryCodeDataSource.swift */; };
+		DE0AAF1023CBB0CF0080EE8B /* FilterDataModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AAF0F23CBB0CE0080EE8B /* FilterDataModuleBuilder.swift */; };
+		DE0AAF1223CBB2090080EE8B /* FilterDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AAF1123CBB2090080EE8B /* FilterDataViewModel.swift */; };
+		DE0AAF1423CBB3460080EE8B /* FilterCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AAF1323CBB3460080EE8B /* FilterCellViewModel.swift */; };
+		DE0AAF1623CBB5020080EE8B /* FilerDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AAF1523CBB5020080EE8B /* FilerDataUseCase.swift */; };
 		DE0E304423C7C61900F34C03 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E304323C7C61900F34C03 /* FilterViewController.swift */; };
 		DE0E304823C7C64B00F34C03 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E304723C7C64B00F34C03 /* FilterViewModel.swift */; };
 		DE0E304A23C7C67D00F34C03 /* FilterModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E304923C7C67D00F34C03 /* FilterModuleBuilder.swift */; };
@@ -76,6 +80,10 @@
 		DE0AAF0623CBAA000080EE8B /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
 		DE0AAF0A23CBAB290080EE8B /* CountryDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDataRepository.swift; sourceTree = "<group>"; };
 		DE0AAF0D23CBADF70080EE8B /* CountryCodeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodeDataSource.swift; sourceTree = "<group>"; };
+		DE0AAF0F23CBB0CE0080EE8B /* FilterDataModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDataModuleBuilder.swift; sourceTree = "<group>"; };
+		DE0AAF1123CBB2090080EE8B /* FilterDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDataViewModel.swift; sourceTree = "<group>"; };
+		DE0AAF1323CBB3460080EE8B /* FilterCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCellViewModel.swift; sourceTree = "<group>"; };
+		DE0AAF1523CBB5020080EE8B /* FilerDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilerDataUseCase.swift; sourceTree = "<group>"; };
 		DE0E304323C7C61900F34C03 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		DE0E304723C7C64B00F34C03 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		DE0E304923C7C67D00F34C03 /* FilterModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModuleBuilder.swift; sourceTree = "<group>"; };
@@ -171,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				DE0AAEEE23CB3E770080EE8B /* ArticlesUseCase.swift */,
+				DE0AAF1523CBB5020080EE8B /* FilerDataUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -190,6 +199,7 @@
 				DE0AAEFA23CBA03B0080EE8B /* Cell */,
 				DE0AAEF923CBA0160080EE8B /* ViewModel */,
 				DE0AAEF823CBA0090080EE8B /* View */,
+				DE0AAF0F23CBB0CE0080EE8B /* FilterDataModuleBuilder.swift */,
 			);
 			path = FilterData;
 			sourceTree = "<group>";
@@ -205,6 +215,7 @@
 		DE0AAEF923CBA0160080EE8B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				DE0AAF1123CBB2090080EE8B /* FilterDataViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -214,6 +225,7 @@
 			children = (
 				DE0AAEFC23CBA0630080EE8B /* FilterCellTableViewCell.swift */,
 				DE0AAEFD23CBA0630080EE8B /* FilterCellTableViewCell.xib */,
+				DE0AAF1323CBB3460080EE8B /* FilterCellViewModel.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -648,12 +660,14 @@
 				DE9C3DE523C5EE590072B154 /* Source.swift in Sources */,
 				DE0AAF0E23CBADF70080EE8B /* CountryCodeDataSource.swift in Sources */,
 				DE9C3DEA23C5F09D0072B154 /* RemoteDataSource.swift in Sources */,
+				DE0AAF1023CBB0CF0080EE8B /* FilterDataModuleBuilder.swift in Sources */,
 				DE412D9E23C6B44900C85EA1 /* ArticlesModuleBuilder.swift in Sources */,
 				DE0AAEFE23CBA0630080EE8B /* FilterCellTableViewCell.swift in Sources */,
 				DE412D8723C635C900C85EA1 /* ViewModelType.swift in Sources */,
 				DE0AAE5523CA554A0080EE8B /* Animation+Fade.swift in Sources */,
 				DE9C3E0A23C6020A0072B154 /* Storyboards.swift in Sources */,
 				DE0E304D23C7D0A600F34C03 /* Transition+presentFullScreen.swift in Sources */,
+				DE0AAF1423CBB3460080EE8B /* FilterCellViewModel.swift in Sources */,
 				DE9C3DEE23C5F17A0072B154 /* Endpointed.swift in Sources */,
 				DE9C3E1923C606FB0072B154 /* Loadable.swift in Sources */,
 				DE0AAEEF23CB3E770080EE8B /* ArticlesUseCase.swift in Sources */,
@@ -665,6 +679,7 @@
 				DE0E304423C7C61900F34C03 /* FilterViewController.swift in Sources */,
 				DE412D9123C672BF00C85EA1 /* ActivityIndicator.swift in Sources */,
 				DE0AAF0123CBA09F0080EE8B /* Country.swift in Sources */,
+				DE0AAF1223CBB2090080EE8B /* FilterDataViewModel.swift in Sources */,
 				DE412D8D23C63DAF00C85EA1 /* ArticlesListViewModel.swift in Sources */,
 				DE412DA723C6CC8D00C85EA1 /* ArticleDetailViewController.swift in Sources */,
 				DE412DAE23C6CD0800C85EA1 /* ArticleDetailViewModel.swift in Sources */,
@@ -674,6 +689,7 @@
 				DE9C3DF623C5F3180072B154 /* Error+Code.swift in Sources */,
 				DE9C3E1B23C6070A0072B154 /* Messagable.swift in Sources */,
 				DE9C3DFD23C5F5F20072B154 /* NewsAPIRemoteDataSource.swift in Sources */,
+				DE0AAF1623CBB5020080EE8B /* FilerDataUseCase.swift in Sources */,
 				DE412D9523C6802C00C85EA1 /* UIView+CornerRaduis.swift in Sources */,
 				DE9C3DFB23C5F4090072B154 /* NewsAPIConstants.swift in Sources */,
 				DE412DAC23C6CCD500C85EA1 /* ArticleDetailModuleBuilder.swift in Sources */,
