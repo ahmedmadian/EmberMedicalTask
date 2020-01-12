@@ -33,19 +33,19 @@ class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
             return .push(detailView)
         case .filter :
             let filterView = FilterModuleBuilder.makeModule(router: unownedRouter)
-            return .presentFullScreen(filterView)
+            return .presentFullScreen(filterView, animation: .fade)
         case .backToHome:
-            return .dismiss()
+            return .dismiss(animation: .fade)
         }
     }
     
     private func Config(navigationController: UINavigationController) {
         navigationController.navigationBar.isTranslucent = false
         navigationController.navigationBar.prefersLargeTitles = true
-        navigationController.navigationBar.backgroundColor = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
-        navigationController.navigationBar.barTintColor = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
+        navigationController.navigationBar.backgroundColor = #colorLiteral(red: 0.4500938654, green: 0.9813225865, blue: 0.4743030667, alpha: 1)
+        navigationController.navigationBar.barTintColor = #colorLiteral(red: 0.4500938654, green: 0.9813225865, blue: 0.4743030667, alpha: 1)
         navigationController.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         navigationController.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
-        navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
+        navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)]
     }
 }

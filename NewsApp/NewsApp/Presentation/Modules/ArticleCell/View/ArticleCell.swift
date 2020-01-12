@@ -19,20 +19,30 @@ class ArticleCell: UITableViewCell {
     
     static func instantiateFromNib(with viewModel: ArticleViewModel) -> ArticleCell {
         let cell = UINib(nibName: typeName, bundle: .main).instantiate(withOwner: self, options: nil).first as! ArticleCell
-           return cell
-       }
+        cell.config(with: viewModel)
+        return cell
+    }
     
     func config(with viewModel: ArticleViewModel) {
         posterImageView.makeRoundedCorners(with: 8.0)
-        
         posterImageView.kf.setImage(with: URL.init(string: viewModel.posterImageURL ?? ""), options: [
         .scaleFactor(UIScreen.main.scale),
         .transition(.fade(1)),
         .cacheOriginalImage
         ])
-        
         self.headlineLabel.text = viewModel.headline
         self.dateLabel.text = viewModel.date
+       animateCell()
+    }
+    
+    func animateCell() {
+        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 0, 50, 0)
+        self.layer.transform = rotationTransform
+        self.alpha = 0.5
+        UIView.animate(withDuration: 1.0) {
+            self.layer.transform = CATransform3DIdentity
+            self.alpha = 1.0
+        }
     }
     
 }

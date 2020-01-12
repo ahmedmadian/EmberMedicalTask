@@ -13,7 +13,9 @@ class ArticlesModuleBuilder {
     
     static func makeModule(router: UnownedRouter<AppStartUpRoute>,dataSource: NeswAPIDataSourceProtocol = NewsAPIRemoteDataSource.shared) -> UIViewController {
         let viewController: ArticlesListViewController = Storyboards.main.instantiate()!
-        viewController.viewModel = ArticlesListViewModel(router: router, dataSource: dataSource)
+        let dataRepo = ArticlesDataRepository(remoteDataSource: dataSource)
+        let useCase = ArticlesUseCase(articlesRepository: dataRepo)
+        viewController.viewModel = ArticlesListViewModel(router: router, useCase: useCase)
         return viewController
     }
 }
