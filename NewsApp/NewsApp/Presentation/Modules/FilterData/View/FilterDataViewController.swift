@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FilterDataViewController: UIViewController {
+class FilterDataViewController: BaseViewController {
 
     //MARK:- IBOutlet
     @IBOutlet weak var tableView: UITableView!
@@ -18,7 +18,21 @@ class FilterDataViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.getFetchedData {
+            self.tableView.reloadData()
+        }
     }
+    
+    //MARK:- IBAction
+    @IBAction func cancelDidTapped(_ sender: Any) {
+        viewModel.cancelDidTapped()
+    }
+    @IBAction func doneDidTapped(_ sender: Any) {
+        viewModel.doneDidTapped()
+    }
+    
+    var currentSelectedIndex: IndexPath!
+    var firstSelected: Bool = true
 }
 
 // MARK:- UITableViewDataSource
@@ -35,10 +49,26 @@ extension FilterDataViewController: UITableViewDataSource {
 }
 
 //MARK:- UITableViewDelegate
-//extension ArticlesListViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        viewModel.didSelectRow(at: indexPath)
-//    }
-//}
+extension FilterDataViewController: UITableViewDelegate {
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if firstSelected {
+            viewModel.didSelectRow(at: indexPath)
+            let cell = tableView.cellForRow(at: indexPath) as! FilterCellTableViewCell
+            cell.configCell(with: viewModel.data(for: indexPath))
+            currentSelectedIndex = indexPath
+            firstSelected = false
+        } else {
+            viewModel.didSelectRow(current: currentSelectedIndex, willSelect: indexPath)
+            let deSelectedCell = tableView.cellForRow(at: currentSelectedIndex) as! FilterCellTableViewCell
+            let currentCell = tableView.cellForRow(at: indexPath) as! FilterCellTableViewCell
+            deSelectedCell.configCell(with: viewModel.data(for: currentSelectedIndex))
+            currentCell.configCell(with: viewModel.data(for: indexPath))
+            currentSelectedIndex = indexPath
+        }
+    }
+    
+}
 
 

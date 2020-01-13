@@ -22,5 +22,6 @@ class FilterCellTableViewCell: UITableViewCell {
     
     func configCell(with viewModel: FilterCellViewModel) {
         titleLabel.text = viewModel.title
+        self.accessoryType = viewModel.isChecked ? .checkmark : .none
     }
 }

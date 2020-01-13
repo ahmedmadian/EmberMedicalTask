@@ -12,6 +12,7 @@ class FilterCellViewModel {
     
     var title: String?
     var id: String?
+    var isChecked: Bool = false
     
     init(id: String?, name: String?) {
         self.title = name

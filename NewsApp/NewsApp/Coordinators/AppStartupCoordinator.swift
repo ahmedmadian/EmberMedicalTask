@@ -15,6 +15,7 @@ enum AppStartUpRoute: Route {
     case filter
     case backToHome
     case filterPicker(PickerOption)
+    case backFromFilterPicker
 }
 
 class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
@@ -40,6 +41,8 @@ class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
         case .filterPicker(let option):
             let filterPicker = FilterDataModuleBuilder.makeModule(router: unownedRouter, with: option)
             return .presentOverCurrentContext(filterPicker)
+        case .backFromFilterPicker:
+            return .dismiss()
         }
     }
     
