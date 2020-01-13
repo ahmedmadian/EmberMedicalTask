@@ -44,11 +44,11 @@ class FilterViewController: BaseViewController {
     }
     
     @IBAction func selectCountryDidTapped(_ sender: Any) {
-        print("Country")
+        viewModel.selectCountryDidTapped()
     }
     
     @IBAction func selectSourceDidTapped(_ sender: Any) {
-        print("Source")
+        viewModel.selectSourceDidTapped()
     }
     
     @IBAction func filterDidTapped(_ sender: Any) {

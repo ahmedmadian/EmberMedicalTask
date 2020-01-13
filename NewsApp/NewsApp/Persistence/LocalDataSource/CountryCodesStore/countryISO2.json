@@ -29,23 +29,23 @@
     "iso2": "WF"
   },
   {
-    "name": "Saint Barthelemy"
+    "name": "Saint Barthelemy",
     "iso2": "BL"
   },
   {
-    "name": "Bermuda"
+    "name": "Bermuda",
     "iso2": "BM"
   },
   {
-    "name": "Brunei"
+    "name": "Brunei",
     "iso2": "BN"
   },
   {
-    "name": "Bolivia"
+    "name": "Bolivia",
     "iso2": "BO"
   },
   {
-    "name": "Bahrain"
+    "name": "Bahrain",
     "iso2": "BH"
   },
   {
@@ -53,19 +53,19 @@
       "name" : "Burundi"
   },
   {
-    "name": "Benin"
+    "name": "Benin",
     "iso2": "BJ"
   },
   {
-    "name": "Bhutan"
+    "name": "Bhutan",
     "iso2": "BT"
   },
   {
-    "name": "Jamaica"
+    "name": "Jamaica",
     "iso2": "JM"
   },
   {
-    "name": "Bouvet Island"
+    "name": "Bouvet Island",
     "iso2": "BV"
   }
 ]

@@ -9,5 +9,12 @@
 import Foundation
 
 class FilterCellViewModel {
+    
     var title: String?
+    var id: String?
+    
+    init(id: String?, name: String?) {
+        self.title = name
+        self.id = id
+    }
 }

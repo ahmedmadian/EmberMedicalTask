@@ -12,13 +12,26 @@ import XCoordinator
 class FilterDataViewModel {
     
     // MARK:- Properties
-       private let router: UnownedRouter<AppStartUpRoute>
-       private let useCase: FilerDataUseCaseable
+    private let router: UnownedRouter<AppStartUpRoute>
+    private let useCase: FilerDataUseCaseable
+    private let data: [FilterCellViewModel]
     
+    var numberOfData: Int {
+        return data.count
+    }
     
     // MARK:- Initialization
     init(router: UnownedRouter<AppStartUpRoute>, useCase: FilerDataUseCaseable) {
         self.router = router
         self.useCase = useCase
+        data = []
     }
+    
+    public func data(for indexPath: IndexPath) -> FilterCellViewModel {
+        return data[indexPath.row]
+    }
+    
+    func getFetchedData() {
+    }
+    
 }

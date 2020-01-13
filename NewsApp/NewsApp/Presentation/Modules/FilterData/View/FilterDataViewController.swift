@@ -21,4 +21,24 @@ class FilterDataViewController: UIViewController {
     }
 }
 
+// MARK:- UITableViewDataSource
+extension FilterDataViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfData
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let data = viewModel.data(for: indexPath)
+        let cell = FilterCellTableViewCell.instantiateFromNib(with: data)
+        return cell
+    }
+}
+
+//MARK:- UITableViewDelegate
+//extension ArticlesListViewController: UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        viewModel.didSelectRow(at: indexPath)
+//    }
+//}
+
 

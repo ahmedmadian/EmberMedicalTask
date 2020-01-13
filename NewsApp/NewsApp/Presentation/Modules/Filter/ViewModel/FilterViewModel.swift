@@ -25,4 +25,12 @@ class FilterViewModel {
     public func dismiss() {
         router.trigger(.backToHome)
     }
+    
+    func selectCountryDidTapped() {
+        router.trigger(.filterPicker(.country))
+    }
+    
+    func selectSourceDidTapped() {
+        router.trigger(.filterPicker(.Source))
+    }
 }
