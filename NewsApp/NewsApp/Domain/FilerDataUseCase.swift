@@ -14,19 +14,19 @@ protocol FilerDataUseCaseable {
 
 class FilerDataUseCase: FilerDataUseCaseable {
     
-    //MARK:- Properties
+    // MARK: - Properties
     private let countryRepository: CountryRepository
     private let sourceRepository: SourceRepository
     private let selector: PickerOption
     
-    // MARK:- Initializers
+    // MARK: - Initializers
     init(countryRepository: CountryRepository, sourceRepository: SourceRepository, selector: PickerOption) {
         self.countryRepository = countryRepository
         self.sourceRepository = sourceRepository
         self.selector = selector
     }
     
-    //MARK:- Methods
+    // MARK: - Methods
     private func fetchCountries() -> [Country]? {
         return self.countryRepository.fetchCountries()
     }
@@ -37,7 +37,7 @@ class FilerDataUseCase: FilerDataUseCaseable {
         }
     }
     
-    //MARK:- FilerDataUseCaseable
+    // MARK: - FilerDataUseCaseable
     func getFetchedData(completion: @escaping (([Lookup]?), Error?) -> ()) {
         switch selector {
         case .country:
