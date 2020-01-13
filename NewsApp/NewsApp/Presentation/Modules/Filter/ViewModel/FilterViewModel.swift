@@ -13,6 +13,8 @@ import RxCocoa
 
 class FilterViewModel {
     
+    
+    
     // MARK:- Properties
     private let router: UnownedRouter<AppStartUpRoute>
     

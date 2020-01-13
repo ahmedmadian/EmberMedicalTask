@@ -21,15 +21,29 @@ class FilterViewController: BaseViewController {
     @IBOutlet weak var selectSourceButton: UIButton!
     @IBOutlet weak var countryRadioButton: UIButton!
     @IBOutlet weak var sourceRadioButton: UIButton!
+    @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var sourceLabel: UILabel!
     
     //MARK:- Properties
     var viewModel: FilterViewModel!
+    private let searchNotificationName = Notification.Name(searchDataNotificationKey)
+    var recievedLookup: Lookup? {
+        didSet {
+            switch recievedLookup!.type! {
+            case .country:
+                self.countryLabel.text = recievedLookup!.name
+            case .Source:
+                self.sourceLabel.text = recievedLookup!.name
+            }
+        }
+    }
     
     //MARK:- Callbacks
     override func viewDidLoad() {
         super.viewDidLoad()
         containerView.makeRoundedCorners(with: 20)
         viewsInititalState()
+        createObserver()
     }
     
     func viewsInititalState() {
@@ -67,6 +81,7 @@ class FilterViewController: BaseViewController {
     }
     
     //MARK:- Methods
+   
     private func togglInRadio(firstButton: UIButton, secondButton: UIButton) {
         if firstButton.isSelected {
             firstButton.isSelected = false
@@ -77,4 +92,17 @@ class FilterViewController: BaseViewController {
         }
     }
     
+    @objc func updateScreen(_ notification: NSNotification) {
+        recievedLookup = notification.object as? Lookup
+    }
+    
+    func createObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateScreen(_:)), name: searchNotificationName , object: nil)
+    }
+    
+    //MARK: - Deinitilization
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }

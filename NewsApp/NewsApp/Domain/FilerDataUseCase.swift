@@ -9,7 +9,7 @@
 import Foundation
 
 protocol FilerDataUseCaseable {
-    func getFetchedData(completion: @escaping (([FilterCellViewModel]?), Error?) -> ())
+    func getFetchedData(completion: @escaping (([Lookup]?), Error?) -> ())
 }
 
 class FilerDataUseCase: FilerDataUseCaseable {
@@ -38,16 +38,16 @@ class FilerDataUseCase: FilerDataUseCaseable {
     }
     
     //MARK:- FilerDataUseCaseable
-    func getFetchedData(completion: @escaping (([FilterCellViewModel]?), Error?) -> ()) {
+    func getFetchedData(completion: @escaping (([Lookup]?), Error?) -> ()) {
         switch selector {
         case .country:
             let countries = self.fetchCountries()
-            let data = countries?.map({ FilterCellViewModel(id: $0.iso2, name: $0.name)})
+            let data = countries?.map({ Lookup(id: $0.iso2, name: $0.name, type: .country)})
             completion(data, nil)
         case .Source:
             self.fetchSources { (sources, error) in
                 if let sources = sources {
-                    let data = sources.map { FilterCellViewModel(id: $0.id, name: $0.name)}
+                    let data = sources.map { Lookup(id: $0.id, name: $0.name, type: .Source)}
                     completion(data, nil)
                 } else {
                     completion(nil, error)

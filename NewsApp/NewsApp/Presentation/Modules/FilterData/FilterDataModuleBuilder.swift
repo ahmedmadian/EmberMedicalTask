@@ -25,8 +25,3 @@ class FilterDataModuleBuilder {
     }
 }
 
-enum PickerOption {
-    case country
-    case Source
-}
-

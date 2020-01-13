@@ -333,10 +333,12 @@
                     <connections>
                         <outlet property="cancelButton" destination="Tj3-t9-V7Z" id="peM-9C-I9a"/>
                         <outlet property="containerView" destination="dsQ-Zl-l62" id="11O-z7-qjY"/>
+                        <outlet property="countryLabel" destination="h2o-kc-Sri" id="3jN-Dt-EK3"/>
                         <outlet property="countryRadioButton" destination="9GM-zT-3Ju" id="CDc-EY-jNE"/>
                         <outlet property="exitButton" destination="a4w-yE-WnG" id="G2h-ua-SEG"/>
                         <outlet property="selectCountryButton" destination="Jlj-Tw-d1b" id="dKJ-33-N8T"/>
                         <outlet property="selectSourceButton" destination="U7l-zH-VUT" id="Ggr-dp-EZB"/>
+                        <outlet property="sourceLabel" destination="13N-bl-3J0" id="xaC-xY-rsM"/>
                         <outlet property="sourceRadioButton" destination="iuh-1S-Apb" id="pPg-o0-Qe3"/>
                     </connections>
                 </viewController>

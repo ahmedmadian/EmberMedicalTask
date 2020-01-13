@@ -64,6 +64,7 @@
 		DE9C3E1323C605F50072B154 /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE9C3E1123C605F50072B154 /* ArticleCell.xib */; };
 		DE9C3E1923C606FB0072B154 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C3E1823C606FB0072B154 /* Loadable.swift */; };
 		DE9C3E1B23C6070A0072B154 /* Messagable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C3E1A23C6070A0072B154 /* Messagable.swift */; };
+		DEF9803523CCE94600B19F87 /* Lookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF9803423CCE94600B19F87 /* Lookup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +129,7 @@
 		DE9C3E1123C605F50072B154 /* ArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
 		DE9C3E1823C606FB0072B154 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		DE9C3E1A23C6070A0072B154 /* Messagable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messagable.swift; sourceTree = "<group>"; };
+		DEF9803423CCE94600B19F87 /* Lookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lookup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +352,7 @@
 				DE9C3DE223C5EE430072B154 /* Article.swift */,
 				DE9C3DE423C5EE590072B154 /* Source.swift */,
 				DE0AAF0023CBA09F0080EE8B /* Country.swift */,
+				DEF9803423CCE94600B19F87 /* Lookup.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -675,6 +678,7 @@
 				DE9C3E1923C606FB0072B154 /* Loadable.swift in Sources */,
 				DE0AAEEF23CB3E770080EE8B /* ArticlesUseCase.swift in Sources */,
 				DE412D8923C63A0A00C85EA1 /* ArticleViewModel.swift in Sources */,
+				DEF9803523CCE94600B19F87 /* Lookup.swift in Sources */,
 				DE9C3DEC23C5F1260072B154 /* RemoteDataSourceServiceError.swift in Sources */,
 				DE9C3E0823C600C80072B154 /* ArticlesListViewController.swift in Sources */,
 				DE0AAEF723CB9FFB0080EE8B /* FilterDataViewController.swift in Sources */,

@@ -36,7 +36,9 @@ class FilterDataViewController: BaseViewController {
 }
 
 // MARK:- UITableViewDataSource
+
 extension FilterDataViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfData
     }
@@ -46,11 +48,12 @@ extension FilterDataViewController: UITableViewDataSource {
         let cell = FilterCellTableViewCell.instantiateFromNib(with: data)
         return cell
     }
+    
 }
 
 //MARK:- UITableViewDelegate
+
 extension FilterDataViewController: UITableViewDelegate {
-    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if firstSelected {
