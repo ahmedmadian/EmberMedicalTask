@@ -8,12 +8,21 @@
 
 import Foundation
 
-enum NewsAPIEndPoints: String, Endpointed {
+enum NewsAPIEndPoints: Endpointed {
     
-    case topHeadlines = "top-headlines"
-    case sources = "sources"
+    case topHeadlines(Lookup?)
+    case sources
     
     //MARK:- Properties
+    var name: String {
+        switch self {
+        case .topHeadlines(_):
+            return "top-headlines"
+        case .sources:
+            return "sources"
+        }
+    }
+    
     private var schema: HTTPSchema {
         switch self {
         default :
@@ -45,14 +54,21 @@ enum NewsAPIEndPoints: String, Endpointed {
     var fullURL: String {
         switch self {
         default :
-            return "\(self.base)/\(self.path)/\(self.rawValue)"
+            return "\(self.base)/\(self.path)/\(self.name)"
         }
     }
     
     var parameters: [String : Any] {
         switch self {
-        case .topHeadlines:
-            return [:]
+        case .topHeadlines(let lookup):
+            switch lookup?.type {
+            case .country:
+                return [NewsAPIParameterKeys.Country : lookup!.id!]
+            case.Source:
+                return [NewsAPIParameterKeys.Sources : lookup!.id!]
+            default:
+                return [:]
+            }
         case .sources:
             return [:]
         }

@@ -15,6 +15,7 @@ class ArticlesListViewController: BaseViewController {
     
     // MARK:- Properties
     var viewModel: ArticlesListViewModel!
+    private var targetLookup: Lookup?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -36,7 +37,7 @@ class ArticlesListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.showLoader(with: "Loading")
-        viewModel.loadArticles { (succeed) in
+        viewModel.loadArticles(with: targetLookup) { (succeed) in
             self.hideLoader()
             if succeed {
                 self.tableView.reloadData()
@@ -50,7 +51,9 @@ class ArticlesListViewController: BaseViewController {
         self.navigationItem.rightBarButtonItem = filterButton
     }
     
-   
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     
     // MARK:- Methods
     func setupNavigationBar(title: String) {
@@ -100,10 +103,21 @@ extension ArticlesListViewController: UITableViewDataSource {
     }
 }
 
-//MARK:- UITableViewDelegate
+// MARK:- UITableViewDelegate
 extension ArticlesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.didSelectRow(at: indexPath)
     }
 }
 
+// MARK:- UITableViewDelegate
+
+extension ArticlesListViewController: FilterPopUpDelegate {
+    func dismissWith(data: Any?) {
+        guard let dataLookup = data as? Lookup else {return}
+        targetLookup = dataLookup
+        viewModel.loadArticles(with: targetLookup) { (_) in
+            self.tableView.reloadData()
+        }
+    }
+}

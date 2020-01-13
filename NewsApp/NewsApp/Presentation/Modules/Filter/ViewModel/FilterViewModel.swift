@@ -12,27 +12,40 @@ import RxSwift
 import RxCocoa
 
 class FilterViewModel {
-    
+   
     
     
     // MARK:- Properties
     private let router: UnownedRouter<AppStartUpRoute>
+    private weak var popupDelegate: FilterPopUpDelegate?
     
     // MARK:- Initialization
-    init(router: UnownedRouter<AppStartUpRoute>) {
+    init(router: UnownedRouter<AppStartUpRoute>, delgate: FilterPopUpDelegate) {
         self.router = router
+        self.popupDelegate = delgate
     }
     
-    //MARK:- Methods
+    // MARK:- Methods
     public func dismiss() {
         router.trigger(.backToHome)
     }
     
-    func selectCountryDidTapped() {
+    public func selectCountryDidTapped() {
         router.trigger(.filterPicker(.country))
     }
     
-    func selectSourceDidTapped() {
+    public func selectSourceDidTapped() {
         router.trigger(.filterPicker(.Source))
     }
+    
+    public func filterDidTapped(with lookup: Lookup) {
+        popupDelegate?.dismissWith(data: lookup)
+        router.trigger(.backToHome)
+    }
+    
+}
+
+
+protocol FilterPopUpDelegate: class {
+    func dismissWith(data: Any?)
 }

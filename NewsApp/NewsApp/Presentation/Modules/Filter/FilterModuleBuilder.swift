@@ -11,9 +11,9 @@ import XCoordinator
 
 class FilterModuleBuilder {
     
-    static func makeModule(router: UnownedRouter<AppStartUpRoute>) -> UIViewController {
+    static func makeModule(router: UnownedRouter<AppStartUpRoute>, popupDelegate: FilterPopUpDelegate) -> UIViewController {
         let viewController: FilterViewController = Storyboards.main.instantiate()!
-        viewController.viewModel = FilterViewModel(router: router)
+        viewController.viewModel = FilterViewModel(router: router, delgate: popupDelegate)
         return viewController
     }
     

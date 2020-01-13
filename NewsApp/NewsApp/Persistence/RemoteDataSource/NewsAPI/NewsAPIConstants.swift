@@ -15,3 +15,10 @@ struct HeaderParameterKeys {
 struct HeaderParameterValues {
     static let APIKey = "dc231d56db084cea9c3e459ff6716df2"
 }
+
+struct NewsAPIParameterKeys {
+    static let Country = "country"
+    static let PageSize = "pageSize"
+    static let Sources = "sources"
+    static let Language = "language"
+}

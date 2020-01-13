@@ -34,7 +34,8 @@ class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
             let detailView = ArticleDetailModuleBuilder.makeModule(router: unownedRouter, dataSource: viewModel)
             return .push(detailView)
         case .filter :
-            let filterView = FilterModuleBuilder.makeModule(router: unownedRouter)
+            let parentVC = rootViewController.children.last as! ArticlesListViewController
+            let filterView = FilterModuleBuilder.makeModule(router: unownedRouter, popupDelegate: parentVC)
             return .presentOverCurrentContext(filterView)
         case .backToHome:
             return .dismiss()

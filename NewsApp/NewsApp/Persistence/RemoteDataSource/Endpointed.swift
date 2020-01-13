@@ -9,6 +9,7 @@
 import Foundation
 
 protocol Endpointed {
+    var name: String { get }
     var parameters: [String : Any] { get }
     var headers: [String : String] { get }
     var fullURL: String { get }

@@ -12,7 +12,7 @@ import Foundation
 import Foundation
 
 protocol ArticlesUseCaseable {
-    func fetchArticles(completion: @escaping (([Article]?), Error?) -> ())
+    func fetchTopHeadlines(with lookup: Lookup?, completion: @escaping (([Article]?), Error?) -> ())
 }
 
 class ArticlesUseCase: ArticlesUseCaseable {
@@ -25,8 +25,8 @@ class ArticlesUseCase: ArticlesUseCaseable {
         self.articlesRepository = articlesRepository
     }
     
-    func fetchArticles(completion: @escaping (([Article]?), Error?) -> ()) {
-        articlesRepository.fetchAllArticles { (articles, error) in
+    func fetchTopHeadlines(with lookup: Lookup?, completion: @escaping (([Article]?), Error?) -> ()) {
+        articlesRepository.fetchTopHeadlines(lookup) { (articles, error) in
             completion(articles, error)
         }
     }

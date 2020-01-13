@@ -9,7 +9,8 @@
 import Foundation
 
 protocol ArticleRepository {
-    func fetchAllArticles(completion: @escaping (([Article]?), Error?) -> ())
+    func fetchTopHeadlines(_ lookup: Lookup?, completion: @escaping (([Article]?), Error?) -> ())
+    //func fetchEveryThing(completion: @escaping (([Article]?, Error) -> ())
 }
 
 class ArticlesDataRepository: ArticleRepository{
@@ -23,8 +24,9 @@ class ArticlesDataRepository: ArticleRepository{
     }
     
     //MARK:- Methods
-    func fetchAllArticles(completion: @escaping (([Article]?), Error?) -> ()) {
-        remoteDataSource.fetchArticles(with: NewsAPIEndPoints.topHeadlines) { (articles, error) in
+    func fetchTopHeadlines(_ lookup: Lookup?, completion: @escaping (([Article]?), Error?) -> ()) {
+        let endPoint: NewsAPIEndPoints = .topHeadlines(lookup)
+        remoteDataSource.fetchArticles(with: endPoint) { (articles, error) in
             completion(articles, error)
         }
     }

@@ -42,8 +42,8 @@ class ArticlesListViewModel {
         router.trigger(.filter)
     }
     
-    public func loadArticles(completion: @escaping (Bool) -> ()) {
-        useCase.fetchArticles { (articles, error) in
+    public func loadArticles(with lookup:Lookup?, completion: @escaping (Bool) -> ()) {
+        useCase.fetchTopHeadlines(with: lookup) { (articles, error) in
             if let articles = articles {
                 self.articales = articles.map {ArticleViewModel(article: $0)}
                 completion(true)

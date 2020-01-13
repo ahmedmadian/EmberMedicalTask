@@ -66,6 +66,8 @@ class FilterViewController: BaseViewController {
     }
     
     @IBAction func filterDidTapped(_ sender: Any) {
+        guard let lookup = recievedLookup else { return }
+        viewModel.filterDidTapped(with: lookup)
     }
     
     @IBAction func countryRadioDidTapped(_ sender: UIButton) {
