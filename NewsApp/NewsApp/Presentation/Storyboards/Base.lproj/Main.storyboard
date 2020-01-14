@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Articles List View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ArticlesListViewController" id="BYZ-38-t0r" customClass="ArticlesListViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="537.68115942028987" y="63.616071428571423"/>
         </scene>
-        <!--Article Detail View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="DW0-z0-1H2">
             <objects>
-                <viewController storyboardIdentifier="ArticleDetailViewController" id="6P9-60-YTC" customClass="ArticleDetailViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="6P9-60-YTC" customClass="DetailViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hCj-Tf-Gge">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,10 +135,10 @@
             </objects>
             <point key="canvasLocation" x="1366.6666666666667" y="68.973214285714278"/>
         </scene>
-        <!--Filter View Controller-->
+        <!--Filter Popup View Controller-->
         <scene sceneID="P6O-f2-8Hc">
             <objects>
-                <viewController storyboardIdentifier="FilterViewController" id="iRU-fq-cTl" customClass="FilterViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FilterPopupViewController" id="iRU-fq-cTl" customClass="FilterPopupViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="dP1-66-11t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -338,10 +338,10 @@
             </objects>
             <point key="canvasLocation" x="2221.739130434783" y="68.973214285714278"/>
         </scene>
-        <!--Filter Data View Controller-->
+        <!--Picker Controller-->
         <scene sceneID="IYI-qW-JVi">
             <objects>
-                <viewController storyboardIdentifier="FilterDataViewController" id="Eaq-Ge-rM8" customClass="FilterDataViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PickerController" id="Eaq-Ge-rM8" customClass="PickerController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5KW-Lp-Gp5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

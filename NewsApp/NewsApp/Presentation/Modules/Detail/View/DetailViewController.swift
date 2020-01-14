@@ -9,14 +9,14 @@
 import UIKit
 import Kingfisher
 
-class ArticleDetailViewController: BaseViewController {
+class DetailViewController: BaseViewController {
 
     @IBOutlet weak var headlineLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var mainImageView: UIImageView!
     
-    var viewModel: ArticleDetailViewModel!
+    var viewModel: DetailViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

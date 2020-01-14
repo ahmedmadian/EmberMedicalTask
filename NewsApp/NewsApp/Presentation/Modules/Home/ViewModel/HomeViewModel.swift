@@ -1,5 +1,5 @@
 //
-//  ArticlesListViewModel.swift
+//  HomeViewModel.swift
 //  NewsApp
 //
 //  Created by Ahmed Madian on 1/8/20.
@@ -9,7 +9,7 @@
 import Foundation
 import XCoordinator
 
-class ArticlesListViewModel {
+class HomeViewModel {
     
     // MARK:- Properties
     private let router: UnownedRouter<AppStartUpRoute>
@@ -35,11 +35,11 @@ class ArticlesListViewModel {
     
     public func didSelectRow(at indexPath: IndexPath) {
         let articleViewModel = self.article(for: indexPath)
-        router.trigger(.details(viewModel: articleViewModel))
+        router.trigger(.detail(viewModel: articleViewModel))
     }
     
     public  func didLaunchFilterView() {
-        router.trigger(.filter)
+        router.trigger(.filterPopup)
     }
     
     public func loadArticles(with lookup:Lookup?, completion: @escaping (Bool) -> ()) {

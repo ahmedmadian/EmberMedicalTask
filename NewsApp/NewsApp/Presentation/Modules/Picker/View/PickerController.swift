@@ -1,5 +1,5 @@
 //
-//  FilterDataViewController.swift
+//  PickerController.swift
 //  NewsApp
 //
 //  Created by Ahmed Madian on 1/12/20.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class FilterDataViewController: BaseViewController {
+class PickerController: BaseViewController {
 
     //MARK:- IBOutlet
     @IBOutlet weak var tableView: UITableView!
     
     // MARK:- Properties
-    var viewModel: FilterPickerViewModel!
+    var viewModel: PickerViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class FilterDataViewController: BaseViewController {
 }
 
 // MARK:- UITableViewDataSource
-extension FilterDataViewController: UITableViewDataSource {
+extension PickerController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfData
@@ -54,7 +54,7 @@ extension FilterDataViewController: UITableViewDataSource {
 
 //MARK:- UITableViewDelegate
 
-extension FilterDataViewController: UITableViewDelegate {
+extension PickerController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if firstSelected {

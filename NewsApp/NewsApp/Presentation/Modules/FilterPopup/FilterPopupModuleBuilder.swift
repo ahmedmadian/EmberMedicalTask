@@ -1,5 +1,5 @@
 //
-//  FilterModuleBuilder.swift
+//  FilterPopupModuleBuilder.swift
 //  NewsApp
 //
 //  Created by Ahmed Madian on 1/9/20.
@@ -9,11 +9,11 @@
 import Foundation
 import XCoordinator
 
-class FilterModuleBuilder {
+class FilterPopupModuleBuilder {
     
     static func makeModule(router: UnownedRouter<AppStartUpRoute>, popupDelegate: FilterPopUpDelegate) -> UIViewController {
-        let viewController: FilterViewController = Storyboards.main.instantiate()!
-        viewController.viewModel = FilterViewModel(router: router, delgate: popupDelegate)
+        let viewController: FilterPopupViewController = Storyboards.main.instantiate()!
+        viewController.viewModel = FilterPopupViewModel(router: router, delgate: popupDelegate)
         return viewController
     }
     

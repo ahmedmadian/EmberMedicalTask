@@ -1,5 +1,5 @@
 //
-//  ArticleDetailModuleBuilder.swift
+//  DetailModuleBuilder.swift
 //  NewsApp
 //
 //  Created by Ahmed Madian on 1/9/20.
@@ -9,12 +9,12 @@
 import Foundation
 import XCoordinator
 
-class ArticleDetailModuleBuilder {
-    // MARK:- Methods
+class DetailModuleBuilder {
     
+    // MARK:- Methods
      static func makeModule(router: UnownedRouter<AppStartUpRoute>,dataSource: ArticleViewModel) -> UIViewController {
-        let viewController: ArticleDetailViewController = Storyboards.main.instantiate()!
-         viewController.viewModel = ArticleDetailViewModel(router: router, article: dataSource)
+        let viewController: DetailViewController = Storyboards.main.instantiate()!
+         viewController.viewModel = DetailViewModel(router: router, article: dataSource)
          return viewController
      }
     

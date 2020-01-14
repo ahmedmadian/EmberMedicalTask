@@ -1,5 +1,5 @@
 //
-//  FilterDataViewModel.swift
+//  PickerViewModel.swift
 //  NewsApp
 //
 //  Created by Ahmed Madian on 1/12/20.
@@ -9,7 +9,7 @@
 import Foundation
 import XCoordinator
 
-class FilterPickerViewModel {
+class PickerViewModel {
     
     // MARK:- Private Fields
     private let router: UnownedRouter<AppStartUpRoute>
@@ -58,7 +58,7 @@ class FilterPickerViewModel {
     }
     
     public func cancelDidTapped() {
-        router.trigger(.backFromFilterPicker)
+        router.trigger(.exit)
     }
     
     public func doneDidTapped() {
@@ -66,7 +66,7 @@ class FilterPickerViewModel {
             let lookup = lookups[selected.row]
             let searchTerm = Notification.Name(rawValue: searchDataNotificationKey)
             NotificationCenter.default.post(name: searchTerm, object: lookup)
-            router.trigger(.backFromFilterPicker)
+            router.trigger(.exit)
         }
     }
     

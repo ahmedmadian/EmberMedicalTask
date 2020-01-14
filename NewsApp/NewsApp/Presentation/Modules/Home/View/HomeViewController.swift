@@ -1,5 +1,5 @@
 //
-//  ArticlesListViewController.swift
+//  DetailViewController.swift
 //  NewsApp
 //
 //  Created by Ahmed Madian on 1/8/20.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ArticlesListViewController: BaseViewController {
+class HomeViewController: BaseViewController {
 
     //MARK:- IBOutlet
     @IBOutlet weak var tableView: UITableView!
     
     // MARK:- Properties
-    var viewModel: ArticlesListViewModel!
+    var viewModel: HomeViewModel!
     private var targetLookup: Lookup?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -102,7 +102,7 @@ class ArticlesListViewController: BaseViewController {
 }
 
 // MARK:- UITableViewDataSource
-extension ArticlesListViewController: UITableViewDataSource {
+extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfArticles
     }
@@ -115,7 +115,7 @@ extension ArticlesListViewController: UITableViewDataSource {
 }
 
 // MARK:- UITableViewDelegate
-extension ArticlesListViewController: UITableViewDelegate {
+extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.didSelectRow(at: indexPath)
     }
@@ -123,7 +123,7 @@ extension ArticlesListViewController: UITableViewDelegate {
 
 // MARK:- UITableViewDelegate
 
-extension ArticlesListViewController: FilterPopUpDelegate {
+extension HomeViewController: FilterPopUpDelegate {
     func dismissWith(data: Any?) {
         self.showLoader(with: "")
         guard let dataLookup = data as? Lookup else {return}

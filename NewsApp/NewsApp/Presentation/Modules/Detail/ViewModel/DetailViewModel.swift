@@ -9,8 +9,7 @@
 import Foundation
 import XCoordinator
 
-class ArticleDetailViewModel {
-    
+class DetailViewModel {
     
     // MARK:- Properties
     private let router: UnownedRouter<AppStartUpRoute>

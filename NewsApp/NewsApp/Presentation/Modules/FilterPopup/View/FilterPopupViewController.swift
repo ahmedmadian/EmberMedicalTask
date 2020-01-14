@@ -1,5 +1,5 @@
 //
-//  FilterViewController.swift
+//  FilterPopupViewController.swift
 //  NewsApp
 //
 //  Created by Ahmed Madian on 1/9/20.
@@ -7,11 +7,8 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 
-class FilterViewController: BaseViewController {
-    
+class FilterPopupViewController: BaseViewController {
     
     //MARK:- IBOutlet
     @IBOutlet weak var containerView: UIView!
@@ -25,7 +22,7 @@ class FilterViewController: BaseViewController {
     @IBOutlet weak var sourceLabel: UILabel!
     
     //MARK:- Properties
-    var viewModel: FilterViewModel!
+    var viewModel: FilterPopupViewModel!
     private let searchNotificationName = Notification.Name(searchDataNotificationKey)
     var recievedLookup: Lookup? {
         didSet {

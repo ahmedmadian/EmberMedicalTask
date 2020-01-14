@@ -1,5 +1,5 @@
 //
-//  FilterViewModel.swift
+//  FilterPopupViewModel.swift
 //  NewsApp
 //
 //  Created by Ahmed Madian on 1/9/20.
@@ -8,13 +8,9 @@
 
 import Foundation
 import XCoordinator
-import RxSwift
-import RxCocoa
 
-class FilterViewModel {
+class FilterPopupViewModel {
    
-    
-    
     // MARK:- Properties
     private let router: UnownedRouter<AppStartUpRoute>
     private weak var popupDelegate: FilterPopUpDelegate?
@@ -27,20 +23,20 @@ class FilterViewModel {
     
     // MARK:- Methods
     public func dismiss() {
-        router.trigger(.backToHome)
+        router.trigger(.exit)
     }
     
     public func selectCountryDidTapped() {
-        router.trigger(.filterPicker(.country))
+        router.trigger(.picker(.country))
     }
     
     public func selectSourceDidTapped() {
-        router.trigger(.filterPicker(.Source))
+        router.trigger(.picker(.Source))
     }
     
     public func filterDidTapped(with lookup: Lookup) {
         popupDelegate?.dismissWith(data: lookup)
-        router.trigger(.backToHome)
+        router.trigger(.exit)
     }
     
 }

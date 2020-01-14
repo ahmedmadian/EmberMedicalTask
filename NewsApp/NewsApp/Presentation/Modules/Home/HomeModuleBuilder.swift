@@ -1,5 +1,5 @@
 //
-//  ArticlesModuleBuilder.swift
+//  HomeModuleBuilder.swift
 //  NewsApp
 //
 //  Created by Ahmed Madian on 1/9/20.
@@ -9,13 +9,13 @@
 import Foundation
 import XCoordinator
 
-class ArticlesModuleBuilder {
+class HomeModuleBuilder {
     
     static func makeModule(router: UnownedRouter<AppStartUpRoute>,dataSource: NeswAPIDataSourceProtocol = NewsAPIRemoteDataSource.shared) -> UIViewController {
-        let viewController: ArticlesListViewController = Storyboards.main.instantiate()!
+        let viewController: HomeViewController = Storyboards.main.instantiate()!
         let dataRepo = ArticlesDataRepository(remoteDataSource: dataSource)
         let useCase = ArticlesUseCase(articlesRepository: dataRepo)
-        viewController.viewModel = ArticlesListViewModel(router: router, useCase: useCase)
+        viewController.viewModel = HomeViewModel(router: router, useCase: useCase)
         return viewController
     }
 }
