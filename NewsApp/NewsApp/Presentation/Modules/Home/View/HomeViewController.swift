@@ -12,6 +12,7 @@ class HomeViewController: BaseViewController {
 
     //MARK:- IBOutlet
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noContentImageView: UIView!
     
     // MARK: - Private Fields
      private var targetLookup: Lookup?
@@ -48,6 +49,7 @@ class HomeViewController: BaseViewController {
         setupNavigationBar(innerView: titleLabel)
         setupTableView()
         registerCells()
+        noContentImageView.isHidden = true
     }
     
     // MARK:- Methods
@@ -84,6 +86,7 @@ class HomeViewController: BaseViewController {
             self.hideLoader()
             if completed {
                 self.tableView.reloadData()
+                self.noContentImageView.isHidden = self.viewModel.numberOfArticles > 0
             } else {
                 self.showErrorMessage(text: self.viewModel.errorMessage)
             }
@@ -129,6 +132,7 @@ extension HomeViewController: FilterPopUpDelegate {
             if completed {
                 self.titleLabel.text = self.viewModel.title
                 self.tableView.reloadData()
+                self.noContentImageView.isHidden = self.viewModel.numberOfArticles > 0
             } else {
                 self.showErrorMessage(text: self.viewModel.errorMessage)
             }
