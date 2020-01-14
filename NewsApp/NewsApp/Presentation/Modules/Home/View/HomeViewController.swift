@@ -13,13 +13,11 @@ class HomeViewController: BaseViewController {
     //MARK:- IBOutlet
     @IBOutlet weak var tableView: UITableView!
     
-    // MARK:- Properties
-    var viewModel: HomeViewModelType!
-    private var targetLookup: Lookup?
+    // MARK: - Private Fields
+     private var targetLookup: Lookup?
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
+    // MARK:- ViewModel
+    var viewModel: HomeViewModelType!
     
     // MARK: - Runtime Views
     lazy var refreshControl: UIRefreshControl = {
@@ -42,36 +40,25 @@ class HomeViewController: BaseViewController {
         return label
     }()
     
-    //MARK: - Callbacks
+    // MARK: - Callbacks
     override func viewDidLoad() {
         super.viewDidLoad()
         self.showLoader(with: "")
-        viewModel.loadArticles(with: targetLookup) { (succeed) in
-            self.hideLoader()
-            if succeed {
-                self.tableView.reloadData()
-            } else {
-               
-            }
-        }
+        self.loadData()
         setupNavigationBar(innerView: titleLabel)
         setupTableView()
         registerCells()
-        self.navigationItem.rightBarButtonItem = filterButton
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
     }
     
     // MARK:- Methods
-    func setupNavigationBar(innerView: UIView) {
+    private func setupNavigationBar(innerView: UIView) {
         let width = self.view.frame.width
         let titleView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: (self.navigationController?.navigationBar.frame.height)!))
         innerView.frame = CGRect(x: 0, y: 0, width: titleView.frame.width, height: titleView.frame.height)
         titleView.addSubview(innerView)
-        navigationItem.titleView = titleView
-        navigationItem.largeTitleDisplayMode = .never
+        self.navigationItem.titleView = titleView
+        self.navigationItem.largeTitleDisplayMode = .never
+        self.navigationItem.rightBarButtonItem = filterButton
     }
     
     private func registerCells() {
@@ -92,12 +79,20 @@ class HomeViewController: BaseViewController {
         viewModel.didLaunchFilterView()
     }
     
+    private func loadData() {
+        viewModel.loadArticles(with: targetLookup) { (completed) in
+            self.hideLoader()
+            if completed {
+                self.tableView.reloadData()
+            } else {
+                self.showErrorMessage(text: self.viewModel.errorMessage)
+            }
+        }
+    }
+    
     @objc func refreshTableView() {
         showLoader(with: "")
-        viewModel.loadArticles(with: targetLookup) { (_) in
-            self.hideLoader()
-            self.tableView.reloadData()
-        }
+        self.loadData()
     }
 }
 
@@ -121,18 +116,23 @@ extension HomeViewController: UITableViewDelegate {
     }
 }
 
-// MARK:- UITableViewDelegate
-
+// MARK:- FilterPopUpDelegate
 extension HomeViewController: FilterPopUpDelegate {
     func dismissWith(data: Any?) {
+        
         self.showLoader(with: "")
         guard let dataLookup = data as? Lookup else {return}
         targetLookup = dataLookup
         
-        viewModel.loadArticles(with: targetLookup) { (_) in
+        viewModel.loadArticles(with: targetLookup) { (completed) in
             self.hideLoader()
-            self.titleLabel.text = self.viewModel.title
-            self.tableView.reloadData()
+            if completed {
+                self.titleLabel.text = self.viewModel.title
+                self.tableView.reloadData()
+            } else {
+                self.showErrorMessage(text: self.viewModel.errorMessage)
+            }
         }
+        
     }
 }

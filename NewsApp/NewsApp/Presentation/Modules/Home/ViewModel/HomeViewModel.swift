@@ -16,9 +16,9 @@ class HomeViewModel: HomeViewModelType {
     private let useCase: ArticlesUseCaseable
     private var articales: [ArticleViewModel]
     
-    public var errorMessage: String
-    public var numberOfArticles: Int {return articales.count}
-    public var title: String = "News App"
+    var errorMessage: String
+    var numberOfArticles: Int {return articales.count}
+    var title: String = "News App"
     
    // MARK:- Initialization
     init(router: UnownedRouter<AppStartUpRoute>, useCase: ArticlesUseCaseable) {

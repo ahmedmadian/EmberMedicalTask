@@ -11,6 +11,7 @@ import Foundation
 protocol HomeViewModelType {
     var numberOfArticles: Int { get }
     var title: String { get }
+    var errorMessage: String { get }
     func article(for indexPath: IndexPath) -> ArticleViewModel
     func didSelectRow(at indexPath: IndexPath)
     func loadArticles(with lookup:Lookup?, completion: @escaping (Bool) -> ())
