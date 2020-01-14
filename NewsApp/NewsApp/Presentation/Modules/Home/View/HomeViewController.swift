@@ -14,7 +14,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK:- Properties
-    var viewModel: HomeViewModel!
+    var viewModel: HomeViewModelType!
     private var targetLookup: Lookup?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

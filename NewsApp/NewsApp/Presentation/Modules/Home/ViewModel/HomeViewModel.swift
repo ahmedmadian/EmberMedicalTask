@@ -9,7 +9,7 @@
 import Foundation
 import XCoordinator
 
-class HomeViewModel {
+class HomeViewModel: HomeViewModelType {
     
     // MARK:- Properties
     private let router: UnownedRouter<AppStartUpRoute>

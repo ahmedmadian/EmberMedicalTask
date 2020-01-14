@@ -14,7 +14,7 @@ class PickerController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK:- Properties
-    var viewModel: PickerViewModel!
+    var viewModel: PickerViewModelType!
     
     override func viewDidLoad() {
         super.viewDidLoad()

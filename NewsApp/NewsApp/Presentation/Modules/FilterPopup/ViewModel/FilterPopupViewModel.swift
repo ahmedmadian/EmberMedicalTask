@@ -9,7 +9,7 @@
 import Foundation
 import XCoordinator
 
-class FilterPopupViewModel {
+class FilterPopupViewModel: FilterPopupViewModelType {
    
     // MARK:- Properties
     private let router: UnownedRouter<AppStartUpRoute>
@@ -26,15 +26,15 @@ class FilterPopupViewModel {
         router.trigger(.exit)
     }
     
-    public func selectCountryDidTapped() {
+    public func selectCountry() {
         router.trigger(.picker(.country))
     }
     
-    public func selectSourceDidTapped() {
+    public func selectSource() {
         router.trigger(.picker(.Source))
     }
     
-    public func filterDidTapped(with lookup: Lookup) {
+    public func startFiltering(with lookup: Lookup) {
         popupDelegate?.dismissWith(data: lookup)
         router.trigger(.exit)
     }

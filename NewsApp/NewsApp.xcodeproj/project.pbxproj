@@ -64,6 +64,10 @@
 		DE9C3E1923C606FB0072B154 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C3E1823C606FB0072B154 /* Loadable.swift */; };
 		DE9C3E1B23C6070A0072B154 /* Messagable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9C3E1A23C6070A0072B154 /* Messagable.swift */; };
 		DEF9803523CCE94600B19F87 /* Lookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF9803423CCE94600B19F87 /* Lookup.swift */; };
+		DEF9803B23CE072B00B19F87 /* PickerViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF9803A23CE072B00B19F87 /* PickerViewModelType.swift */; };
+		DEF9803D23CE08ED00B19F87 /* FilterPopupViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF9803C23CE08ED00B19F87 /* FilterPopupViewModelType.swift */; };
+		DEF9803F23CE0A4000B19F87 /* DetailViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF9803E23CE0A4000B19F87 /* DetailViewModelType.swift */; };
+		DEF9804123CE0A9600B19F87 /* HomeViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF9804023CE0A9600B19F87 /* HomeViewModelType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +132,10 @@
 		DE9C3E1823C606FB0072B154 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		DE9C3E1A23C6070A0072B154 /* Messagable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messagable.swift; sourceTree = "<group>"; };
 		DEF9803423CCE94600B19F87 /* Lookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lookup.swift; sourceTree = "<group>"; };
+		DEF9803A23CE072B00B19F87 /* PickerViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewModelType.swift; sourceTree = "<group>"; };
+		DEF9803C23CE08ED00B19F87 /* FilterPopupViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPopupViewModelType.swift; sourceTree = "<group>"; };
+		DEF9803E23CE0A4000B19F87 /* DetailViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelType.swift; sourceTree = "<group>"; };
+		DEF9804023CE0A9600B19F87 /* HomeViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				DE0AAF1123CBB2090080EE8B /* PickerViewModel.swift */,
+				DEF9803A23CE072B00B19F87 /* PickerViewModelType.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -262,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				DE0E304723C7C64B00F34C03 /* FilterPopupViewModel.swift */,
+				DEF9803C23CE08ED00B19F87 /* FilterPopupViewModelType.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -305,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				DE412DAD23C6CD0800C85EA1 /* DetailViewModel.swift */,
+				DEF9803E23CE0A4000B19F87 /* DetailViewModelType.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -478,6 +489,7 @@
 			isa = PBXGroup;
 			children = (
 				DE412D8C23C63DAF00C85EA1 /* HomeViewModel.swift */,
+				DEF9804023CE0A9600B19F87 /* HomeViewModelType.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -703,9 +715,11 @@
 				DE0E304D23C7D0A600F34C03 /* Transition+presentFullScreen.swift in Sources */,
 				DE0AAF1423CBB3460080EE8B /* PickerCellViewModel.swift in Sources */,
 				DE9C3DEE23C5F17A0072B154 /* Endpointed.swift in Sources */,
+				DEF9803B23CE072B00B19F87 /* PickerViewModelType.swift in Sources */,
 				DE9C3E1923C606FB0072B154 /* Loadable.swift in Sources */,
 				DE0AAEEF23CB3E770080EE8B /* ArticlesUseCase.swift in Sources */,
 				DE412D8923C63A0A00C85EA1 /* ArticleViewModel.swift in Sources */,
+				DEF9804123CE0A9600B19F87 /* HomeViewModelType.swift in Sources */,
 				DEF9803523CCE94600B19F87 /* Lookup.swift in Sources */,
 				DE9C3DEC23C5F1260072B154 /* RemoteDataSourceServiceError.swift in Sources */,
 				DE9C3E0823C600C80072B154 /* HomeViewController.swift in Sources */,
@@ -724,6 +738,8 @@
 				DE9C3DF623C5F3180072B154 /* Error+Code.swift in Sources */,
 				DE9C3E1B23C6070A0072B154 /* Messagable.swift in Sources */,
 				DE9C3DFD23C5F5F20072B154 /* NewsAPIRemoteDataSource.swift in Sources */,
+				DEF9803F23CE0A4000B19F87 /* DetailViewModelType.swift in Sources */,
+				DEF9803D23CE08ED00B19F87 /* FilterPopupViewModelType.swift in Sources */,
 				DE0AAF1623CBB5020080EE8B /* FilerDataUseCase.swift in Sources */,
 				DE412D9523C6802C00C85EA1 /* UIView+CornerRaduis.swift in Sources */,
 				DE0AAF1823CBBF870080EE8B /* SourceDataRepository.swift in Sources */,

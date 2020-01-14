@@ -9,7 +9,7 @@
 import Foundation
 import XCoordinator
 
-class PickerViewModel {
+class PickerViewModel: PickerViewModelType {
     
     // MARK:- Private Fields
     private let router: UnownedRouter<AppStartUpRoute>

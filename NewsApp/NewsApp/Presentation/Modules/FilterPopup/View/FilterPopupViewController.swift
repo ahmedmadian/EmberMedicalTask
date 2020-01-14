@@ -22,7 +22,7 @@ class FilterPopupViewController: BaseViewController {
     @IBOutlet weak var sourceLabel: UILabel!
     
     //MARK:- Properties
-    var viewModel: FilterPopupViewModel!
+    var viewModel: FilterPopupViewModelType!
     private let searchNotificationName = Notification.Name(searchDataNotificationKey)
     var recievedLookup: Lookup? {
         didSet {
@@ -55,16 +55,16 @@ class FilterPopupViewController: BaseViewController {
     }
     
     @IBAction func selectCountryDidTapped(_ sender: Any) {
-        viewModel.selectCountryDidTapped()
+        viewModel.selectCountry()
     }
     
     @IBAction func selectSourceDidTapped(_ sender: Any) {
-        viewModel.selectSourceDidTapped()
+        viewModel.selectSource()
     }
     
     @IBAction func filterDidTapped(_ sender: Any) {
         guard let lookup = recievedLookup else { return }
-        viewModel.filterDidTapped(with: lookup)
+        viewModel.startFiltering(with: lookup)
     }
     
     @IBAction func countryRadioDidTapped(_ sender: UIButton) {
