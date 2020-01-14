@@ -357,8 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				DE0AAEF023CB3F560080EE8B /* Repository */,
-				DE9C3DE823C5EFCA0072B154 /* LocalDataSource */,
-				DE9C3DE723C5EFB60072B154 /* RemoteDataSource */,
+				DEF9803923CDF41C00B19F87 /* DataSources */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -551,6 +550,15 @@
 				DE9C3E0F23C605CA0072B154 /* ArticleCell */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		DEF9803923CDF41C00B19F87 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				DE9C3DE823C5EFCA0072B154 /* LocalDataSource */,
+				DE9C3DE723C5EFB60072B154 /* RemoteDataSource */,
+			);
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
