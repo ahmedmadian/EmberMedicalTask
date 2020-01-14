@@ -25,6 +25,7 @@ class ArticlesListViewController: BaseViewController {
     lazy var refreshControl: UIRefreshControl = {
        let controller = UIRefreshControl()
         controller.backgroundColor =  #colorLiteral(red: 0.6682028062, green: 0.6682028062, blue: 0.6682028062, alpha: 1)
+        controller.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
         return controller
     }()
     
@@ -33,10 +34,18 @@ class ArticlesListViewController: BaseViewController {
         return button
     }()
     
+    lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = viewModel.title
+        label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        return label
+    }()
+    
     //MARK: - Callbacks
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.showLoader(with: "Loading")
+        self.showLoader(with: "")
         viewModel.loadArticles(with: targetLookup) { (succeed) in
             self.hideLoader()
             if succeed {
@@ -45,7 +54,7 @@ class ArticlesListViewController: BaseViewController {
                
             }
         }
-        setupNavigationBar(title: viewModel.title)
+        setupNavigationBar(innerView: titleLabel)
         setupTableView()
         registerCells()
         self.navigationItem.rightBarButtonItem = filterButton
@@ -56,17 +65,11 @@ class ArticlesListViewController: BaseViewController {
     }
     
     // MARK:- Methods
-    func setupNavigationBar(title: String) {
+    func setupNavigationBar(innerView: UIView) {
         let width = self.view.frame.width
-        
         let titleView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: (self.navigationController?.navigationBar.frame.height)!))
-        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: titleView.frame.width, height: titleView.frame.height))
-        
-        titleLabel.text = title
-        titleLabel.textColor = .white
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
-        titleView.addSubview(titleLabel)
-        
+        innerView.frame = CGRect(x: 0, y: 0, width: titleView.frame.width, height: titleView.frame.height)
+        titleView.addSubview(innerView)
         navigationItem.titleView = titleView
         navigationItem.largeTitleDisplayMode = .never
     }
@@ -87,6 +90,14 @@ class ArticlesListViewController: BaseViewController {
     
     @objc func startFiltering() {
         viewModel.didLaunchFilterView()
+    }
+    
+    @objc func refreshTableView() {
+        showLoader(with: "")
+        viewModel.loadArticles(with: targetLookup) { (_) in
+            self.hideLoader()
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -114,9 +125,13 @@ extension ArticlesListViewController: UITableViewDelegate {
 
 extension ArticlesListViewController: FilterPopUpDelegate {
     func dismissWith(data: Any?) {
+        self.showLoader(with: "")
         guard let dataLookup = data as? Lookup else {return}
         targetLookup = dataLookup
+        
         viewModel.loadArticles(with: targetLookup) { (_) in
+            self.hideLoader()
+            self.titleLabel.text = self.viewModel.title
             self.tableView.reloadData()
         }
     }

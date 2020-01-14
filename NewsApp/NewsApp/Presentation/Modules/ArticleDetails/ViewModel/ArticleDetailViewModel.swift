@@ -15,6 +15,7 @@ class ArticleDetailViewModel {
     // MARK:- Properties
     private let router: UnownedRouter<AppStartUpRoute>
     let article: ArticleViewModel
+    var title: String?
     
     init(router: UnownedRouter<AppStartUpRoute>, article: ArticleViewModel) {
         self.article = article

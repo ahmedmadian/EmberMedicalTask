@@ -9,15 +9,16 @@
 import Foundation
 import XCoordinator
 
-class FilterDataViewModel {
+class FilterPickerViewModel {
     
-    // MARK:- Properties
+    // MARK:- Private Fields
     private let router: UnownedRouter<AppStartUpRoute>
     private let useCase: FilerDataUseCaseable
-    private var data: [FilterCellViewModel]
+    private var data: [PickerCellViewModel]
     private var selectedIndexPath: IndexPath?
     private var lookups: [Lookup]
     
+    // MARK:- Properties
     var numberOfData: Int {
         return data.count
     }
@@ -30,9 +31,8 @@ class FilterDataViewModel {
         lookups = []
     }
     
-    //MARK: - Methods
-    
-    public func data(for indexPath: IndexPath) -> FilterCellViewModel {
+    //MARK:- Methods
+    public func data(for indexPath: IndexPath) -> PickerCellViewModel {
         return data[indexPath.row]
     }
     
@@ -40,7 +40,7 @@ class FilterDataViewModel {
         useCase.getFetchedData { (response, error) in
             if let response = response {
                 self.lookups = response
-                self.data = response.map({FilterCellViewModel(id: $0.id, name: $0.name)})
+                self.data = response.map({PickerCellViewModel(id: $0.id, name: $0.name)})
                 completion()
             }
         }
@@ -51,7 +51,6 @@ class FilterDataViewModel {
         data(for: willSelect).isChecked = true
         selectedIndexPath = willSelect
     }
-    
     
     public func didSelectRow(at indexPath: IndexPath) {
         data[indexPath.row].isChecked = true

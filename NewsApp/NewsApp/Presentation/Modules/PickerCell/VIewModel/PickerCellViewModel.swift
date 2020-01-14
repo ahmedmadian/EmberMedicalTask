@@ -8,12 +8,14 @@
 
 import Foundation
 
-class FilterCellViewModel {
+class PickerCellViewModel {
     
+    // MARK: - Properties
     var title: String?
     var id: String?
     var isChecked: Bool = false
     
+    // MARK: - Initilization
     init(id: String?, name: String?) {
         self.title = name
         self.id = id

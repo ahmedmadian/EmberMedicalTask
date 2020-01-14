@@ -20,10 +20,12 @@ enum AppStartUpRoute: Route {
 
 class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
 
+    // MARK:- Initlization
     init() {
         super.init(initialRoute: .home)
     }
 
+    // MARK:- Methods
     override func prepareTransition(for route: AppStartUpRoute) -> NavigationTransition {
         Config(navigationController: self.rootViewController)
         switch route {
@@ -49,7 +51,6 @@ class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
     
     private func Config(navigationController: UINavigationController) {
         navigationController.navigationBar.isTranslucent = false
-        navigationController.navigationBar.prefersLargeTitles = true
         navigationController.navigationBar.backgroundColor = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
         navigationController.navigationBar.barTintColor = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
         navigationController.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)

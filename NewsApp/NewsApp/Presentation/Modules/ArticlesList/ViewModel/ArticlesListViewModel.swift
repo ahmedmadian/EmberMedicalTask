@@ -18,7 +18,7 @@ class ArticlesListViewModel {
     
     public var errorMessage: String
     public var numberOfArticles: Int {return articales.count}
-    public var title: String {return "News App"}
+    public var title: String = "News App"
     
    // MARK:- Initialization
     init(router: UnownedRouter<AppStartUpRoute>, useCase: ArticlesUseCaseable) {
@@ -43,6 +43,7 @@ class ArticlesListViewModel {
     }
     
     public func loadArticles(with lookup:Lookup?, completion: @escaping (Bool) -> ()) {
+        if let lookup = lookup { self.title = lookup.name!}
         useCase.fetchTopHeadlines(with: lookup) { (articles, error) in
             if let articles = articles {
                 self.articales = articles.map {ArticleViewModel(article: $0)}

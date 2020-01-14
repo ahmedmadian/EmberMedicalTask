@@ -8,19 +8,19 @@
 
 import UIKit
 
-class FilterCellTableViewCell: UITableViewCell {
+class PickerCell: UITableViewCell {
 
     //MARK: IBOutlet
     @IBOutlet weak var titleLabel: UILabel!
     
     //MARK:- Methods
-    static func instantiateFromNib(with viewModel: FilterCellViewModel) -> FilterCellTableViewCell {
-        let cell = UINib(nibName: typeName, bundle: .main).instantiate(withOwner: self, options: nil).first as! FilterCellTableViewCell
+    static func instantiateFromNib(with viewModel: PickerCellViewModel) -> PickerCell {
+        let cell = UINib(nibName: typeName, bundle: .main).instantiate(withOwner: self, options: nil).first as! PickerCell
         cell.configCell(with: viewModel)
         return cell
     }
     
-    func configCell(with viewModel: FilterCellViewModel) {
+    func configCell(with viewModel: PickerCellViewModel) {
         titleLabel.text = viewModel.title
         self.accessoryType = viewModel.isChecked ? .checkmark : .none
     }

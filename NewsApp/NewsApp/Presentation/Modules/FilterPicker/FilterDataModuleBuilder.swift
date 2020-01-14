@@ -20,7 +20,7 @@ class FilterDataModuleBuilder {
         
         let useCase = FilerDataUseCase(countryRepository: countryRepo, sourceRepository: sourcesRepo, selector: selector)
         
-        viewController.viewModel = FilterDataViewModel(router: router, useCase: useCase)
+        viewController.viewModel = FilterPickerViewModel(router: router, useCase: useCase)
         return viewController
     }
 }

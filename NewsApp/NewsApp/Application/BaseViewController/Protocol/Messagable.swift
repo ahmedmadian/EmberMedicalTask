@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftMessages
 
 protocol Messagable: class {
     func showSuccessMessage(text: String)

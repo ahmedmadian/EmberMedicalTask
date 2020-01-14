@@ -8,9 +8,6 @@
 
 import Foundation
 
-
-import Foundation
-
 protocol ArticlesUseCaseable {
     func fetchTopHeadlines(with lookup: Lookup?, completion: @escaping (([Article]?), Error?) -> ())
 }

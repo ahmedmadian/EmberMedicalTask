@@ -14,11 +14,13 @@ class FilterDataViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK:- Properties
-    var viewModel: FilterDataViewModel!
+    var viewModel: FilterPickerViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.showLoader(with: "Loading ..")
         viewModel.getFetchedData {
+            self.hideLoader()
             self.tableView.reloadData()
         }
     }
@@ -36,7 +38,6 @@ class FilterDataViewController: BaseViewController {
 }
 
 // MARK:- UITableViewDataSource
-
 extension FilterDataViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,7 +46,7 @@ extension FilterDataViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = viewModel.data(for: indexPath)
-        let cell = FilterCellTableViewCell.instantiateFromNib(with: data)
+        let cell = PickerCell.instantiateFromNib(with: data)
         return cell
     }
     
@@ -58,14 +59,14 @@ extension FilterDataViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if firstSelected {
             viewModel.didSelectRow(at: indexPath)
-            let cell = tableView.cellForRow(at: indexPath) as! FilterCellTableViewCell
+            let cell = tableView.cellForRow(at: indexPath) as! PickerCell
             cell.configCell(with: viewModel.data(for: indexPath))
             currentSelectedIndex = indexPath
             firstSelected = false
         } else {
             viewModel.didSelectRow(current: currentSelectedIndex, willSelect: indexPath)
-            let deSelectedCell = tableView.cellForRow(at: currentSelectedIndex) as! FilterCellTableViewCell
-            let currentCell = tableView.cellForRow(at: indexPath) as! FilterCellTableViewCell
+            let deSelectedCell = tableView.cellForRow(at: currentSelectedIndex) as! PickerCell
+            let currentCell = tableView.cellForRow(at: indexPath) as! PickerCell
             deSelectedCell.configCell(with: viewModel.data(for: currentSelectedIndex))
             currentCell.configCell(with: viewModel.data(for: indexPath))
             currentSelectedIndex = indexPath

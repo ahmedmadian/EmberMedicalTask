@@ -10,7 +10,7 @@ import UIKit
 import XCoordinator
 
 extension Transition {
-
+    
     static func presentOverCurrentContext(_ presentable: Presentable, animation: Animation? = nil) -> Transition {
         presentable.viewController?.modalPresentationStyle = .overCurrentContext
         return .present(presentable, animation: animation)
