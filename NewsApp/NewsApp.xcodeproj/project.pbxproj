@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		996981C1368662068C3B9C7C /* Pods_NewsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B90FDC179A50A6D0A8D91F06 /* Pods_NewsApp.framework */; };
-		DE0AAE5523CA554A0080EE8B /* Animation+Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AAE5423CA554A0080EE8B /* Animation+Fade.swift */; };
 		DE0AAEEF23CB3E770080EE8B /* ArticlesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AAEEE23CB3E770080EE8B /* ArticlesUseCase.swift */; };
 		DE0AAEF223CB3F790080EE8B /* ArticlesDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AAEF123CB3F790080EE8B /* ArticlesDataRepository.swift */; };
 		DE0AAEF723CB9FFB0080EE8B /* PickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AAEF623CB9FFB0080EE8B /* PickerController.swift */; };
@@ -66,13 +65,13 @@
 		DEF9803F23CE0A4000B19F87 /* DetailViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF9803E23CE0A4000B19F87 /* DetailViewModelType.swift */; };
 		DEF9804123CE0A9600B19F87 /* HomeViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF9804023CE0A9600B19F87 /* HomeViewModelType.swift */; };
 		DEF9804523CF3F1700B19F87 /* FilterPopupDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF9804423CF3F1700B19F87 /* FilterPopupDelegate.swift */; };
+		DEF9804823CF436B00B19F87 /* Animation+Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF9804723CF436B00B19F87 /* Animation+Fade.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2DA0EEDD5D3D042671FF50A8 /* Pods-NewsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.release.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.release.xcconfig"; sourceTree = "<group>"; };
 		3E9BC61FEAF350E86B805622 /* Pods-NewsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.debug.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B90FDC179A50A6D0A8D91F06 /* Pods_NewsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE0AAE5423CA554A0080EE8B /* Animation+Fade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation+Fade.swift"; sourceTree = "<group>"; };
 		DE0AAEEE23CB3E770080EE8B /* ArticlesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesUseCase.swift; sourceTree = "<group>"; };
 		DE0AAEF123CB3F790080EE8B /* ArticlesDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesDataRepository.swift; sourceTree = "<group>"; };
 		DE0AAEF623CB9FFB0080EE8B /* PickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerController.swift; sourceTree = "<group>"; };
@@ -132,6 +131,7 @@
 		DEF9803E23CE0A4000B19F87 /* DetailViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelType.swift; sourceTree = "<group>"; };
 		DEF9804023CE0A9600B19F87 /* HomeViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelType.swift; sourceTree = "<group>"; };
 		DEF9804423CF3F1700B19F87 /* FilterPopupDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPopupDelegate.swift; sourceTree = "<group>"; };
+		DEF9804723CF436B00B19F87 /* Animation+Fade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation+Fade.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,14 +161,6 @@
 				B90FDC179A50A6D0A8D91F06 /* Pods_NewsApp.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DE0AAE5323CA55370080EE8B /* Animations */ = {
-			isa = PBXGroup;
-			children = (
-				DE0AAE5423CA554A0080EE8B /* Animation+Fade.swift */,
-			);
-			path = Animations;
 			sourceTree = "<group>";
 		};
 		DE0AAEEC23CB34110080EE8B /* Presentation */ = {
@@ -338,9 +330,9 @@
 		DE9C3DCC23C5EB3E0072B154 /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				DEF9804623CF435A00B19F87 /* Animation */,
 				DE0AAEED23CB3E520080EE8B /* Domain */,
 				DE9C3E0323C5FFD20072B154 /* Application */,
-				DE0AAE5323CA55370080EE8B /* Animations */,
 				DE412D9823C6B33200C85EA1 /* Coordinators */,
 				DE9C3DE123C5EDB10072B154 /* Model */,
 				DE0AAEEC23CB34110080EE8B /* Presentation */,
@@ -567,6 +559,14 @@
 			path = DataSources;
 			sourceTree = "<group>";
 		};
+		DEF9804623CF435A00B19F87 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				DEF9804723CF436B00B19F87 /* Animation+Fade.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -702,7 +702,6 @@
 				DE0AAF1023CBB0CF0080EE8B /* PickerModuleBuilder.swift in Sources */,
 				DE412D9E23C6B44900C85EA1 /* HomeModuleBuilder.swift in Sources */,
 				DE0AAEFE23CBA0630080EE8B /* PickerCell.swift in Sources */,
-				DE0AAE5523CA554A0080EE8B /* Animation+Fade.swift in Sources */,
 				DE9C3E0A23C6020A0072B154 /* Storyboards.swift in Sources */,
 				DE0E304D23C7D0A600F34C03 /* Transition+presentFullScreen.swift in Sources */,
 				DE0AAF1423CBB3460080EE8B /* PickerCellViewModel.swift in Sources */,
@@ -717,6 +716,7 @@
 				DE9C3DEC23C5F1260072B154 /* RemoteDataSourceServiceError.swift in Sources */,
 				DE9C3E0823C600C80072B154 /* HomeViewController.swift in Sources */,
 				DE0AAEF723CB9FFB0080EE8B /* PickerController.swift in Sources */,
+				DEF9804823CF436B00B19F87 /* Animation+Fade.swift in Sources */,
 				DE0AAF0723CBAA000080EE8B /* LocalDataSource.swift in Sources */,
 				DE0E304423C7C61900F34C03 /* FilterPopupViewController.swift in Sources */,
 				DE0AAF0123CBA09F0080EE8B /* Country.swift in Sources */,

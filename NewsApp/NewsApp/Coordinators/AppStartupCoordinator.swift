@@ -29,15 +29,15 @@ class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
         Config(navigationController: self.rootViewController)
         switch route {
         case .home:
-            let articlesView = HomeModuleBuilder.makeModule(router: unownedRouter)
-            return .push(articlesView)
+            let homeView = HomeModuleBuilder.makeModule(router: unownedRouter)
+            return .push(homeView)
         case .detail(let viewModel):
             let detailView = DetailModuleBuilder.makeModule(router: unownedRouter, dataSource: viewModel)
             return .push(detailView)
         case .filterPopup :
             let parentVC = rootViewController.children.last as! HomeViewController
-            let filterView = FilterPopupModuleBuilder.makeModule(router: unownedRouter, popupDelegate: parentVC)
-            return .presentOverCurrentContext(filterView)
+            let popupView = FilterPopupModuleBuilder.makeModule(router: unownedRouter, popupDelegate: parentVC)
+            return .presentOverCurrentContext(popupView, animation: .fade)
         case .picker(let option):
             let filterPicker = PickerModuleBuilder.makeModule(router: unownedRouter, with: option)
             return .presentOverCurrentContext(filterPicker)
