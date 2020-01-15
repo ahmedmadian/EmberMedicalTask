@@ -6,12 +6,13 @@ This demo for iOS developer vacancy in EmberMedical.
 
 It is a simple new app which fetches data from a remote data source - News API https://newsapi.org/docs/get-started - and filtering them based on Country || News Source.
 
-### Used Architecture
+### Used Architecture and patterns
 
 - Clean Architecture <br/>
 - MVVM + XCoordinator <br/>
 - Coordinator <br/>
 - Repository <br/>
+- Factory
 
 ### Dependency Graph
 
