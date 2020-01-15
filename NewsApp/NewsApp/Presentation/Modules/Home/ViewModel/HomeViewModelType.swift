@@ -16,4 +16,5 @@ protocol HomeViewModelType {
     func didSelectRow(at indexPath: IndexPath)
     func loadArticles(with lookup:Lookup?, completion: @escaping (Bool) -> ())
     func didLaunchFilterView()
+    func sourceTitle(fot indexPath: IndexPath) -> String?
 }

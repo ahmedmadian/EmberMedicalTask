@@ -54,4 +54,8 @@ class HomeViewModel: HomeViewModelType {
             }
         }
     }
+    
+    func sourceTitle(fot indexPath: IndexPath) -> String? {
+        return self.article(for: indexPath).sourceName
+    }
 }

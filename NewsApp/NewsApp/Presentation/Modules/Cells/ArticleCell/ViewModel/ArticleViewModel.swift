@@ -15,6 +15,7 @@ class ArticleViewModel {
     var authorName: String?
     var articleDescription: String?
     var url: String?
+    var sourceName: String?
     
     init(article: Article) {
         self.posterImageURL = article.urlToImage
@@ -23,6 +24,7 @@ class ArticleViewModel {
         self.authorName = article.author
         self.articleDescription = article.articleDescription
         self.url = article.url
+        self.sourceName = article.source?.name
     }
     
     func formatDate(with stringDate: String) -> String {

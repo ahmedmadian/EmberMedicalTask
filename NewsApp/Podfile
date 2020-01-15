@@ -5,8 +5,6 @@ def swiftPods
   pod 'Alamofire'
   pod "SwiftSpinner"
   pod 'SwiftMessages'
-  pod 'RxCocoa', '~> 5.0'
-  pod 'RxSwift', '~> 5.0'
   pod 'Kingfisher'
   pod 'XCoordinator'
 end

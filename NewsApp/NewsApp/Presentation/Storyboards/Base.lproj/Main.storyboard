@@ -31,9 +31,10 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="i0n-Or-M9U" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Bdp-ix-FHj"/>
                             <constraint firstItem="dcM-ys-dej" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Goz-CP-PSB"/>
                             <constraint firstItem="i0n-Or-M9U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JGK-cn-iB3"/>
                             <constraint firstItem="i0n-Or-M9U" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LGT-EX-DmS"/>
@@ -42,7 +43,6 @@
                             <constraint firstItem="dcM-ys-dej" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aYT-8F-6wR"/>
                             <constraint firstItem="dcM-ys-dej" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="u0E-cX-t1d"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dcM-ys-dej" secondAttribute="trailing" id="wQG-RB-BCW"/>
-                            <constraint firstItem="i0n-Or-M9U" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="y0O-QB-w7C"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

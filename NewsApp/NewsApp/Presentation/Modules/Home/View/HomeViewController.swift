@@ -59,7 +59,6 @@ class HomeViewController: BaseViewController {
         innerView.frame = CGRect(x: 0, y: 0, width: titleView.frame.width, height: titleView.frame.height)
         titleView.addSubview(innerView)
         self.navigationItem.titleView = titleView
-        self.navigationItem.largeTitleDisplayMode = .never
         self.navigationItem.rightBarButtonItem = filterButton
     }
     
@@ -115,6 +114,7 @@ extension HomeViewController: UITableViewDataSource {
 // MARK:- UITableViewDelegate
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.navigationItem.title = viewModel.sourceTitle(fot: indexPath)
         viewModel.didSelectRow(at: indexPath)
     }
 }

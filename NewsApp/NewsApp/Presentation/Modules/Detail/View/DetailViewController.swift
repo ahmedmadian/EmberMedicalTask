@@ -22,14 +22,7 @@ class DetailViewController: BaseViewController {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
         config(article: viewModel.article)
-        setupNavigationBar()
     }
-    
-    func setupNavigationBar () {
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-    }
-    
     
     
     func config(article: ArticleViewModel) {

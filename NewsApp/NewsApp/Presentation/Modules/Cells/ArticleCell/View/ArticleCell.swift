@@ -29,7 +29,7 @@ class ArticleCell: UITableViewCell {
         posterImageView.kf.setImage(with: URL.init(string: viewModel.posterImageURL ?? ""), options: [
         .scaleFactor(UIScreen.main.scale),
         .transition(.fade(1)),
-        .cacheOriginalImage
+        .cacheOriginalImage,
         ])
         self.headlineLabel.text = viewModel.headline
         self.dateLabel.text = viewModel.date

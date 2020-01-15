@@ -26,7 +26,6 @@ class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
 
     // MARK:- Methods
     override func prepareTransition(for route: AppStartUpRoute) -> NavigationTransition {
-        
         Config(navigationController: self.rootViewController)
         switch route {
         case .home:
@@ -48,6 +47,7 @@ class AppStartUpCoordinator: NavigationCoordinator<AppStartUpRoute> {
     }
     
     private func Config(navigationController: UINavigationController) {
+        
         navigationController.navigationBar.isTranslucent = false
         navigationController.navigationBar.backgroundColor = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
         navigationController.navigationBar.barTintColor = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
