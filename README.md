@@ -35,7 +35,7 @@ Every inner layer doesn't know anything about the outer layer. <br />
 **SwiftMessages** for better message views. <br />
 **XCoordinator** for seperation of modules. <br />
 <br/>
-Note - please install podfile before tuning the project.
+Note - please install podfile before building the project.
 
 ### Remote Data Source
 
