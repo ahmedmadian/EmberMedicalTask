@@ -11,9 +11,9 @@ import Foundation
 class Country: Codable {
     let name:String?
     let iso2: String?
-
-    enum CodingKeys: String, CodingKey {
-        case name
-        case iso2 = "iso2"
+    
+    init(name: String?, ios2: String?) {
+        self.name = name
+        self.iso2 = ios2
     }
 }

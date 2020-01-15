@@ -24,7 +24,17 @@ final class CountryCodeDataSource:  CountryCodeDataSourceProtocol{
     private init() {}
     
     func fetchCountries() -> [Country]? {
-        return self.fetchDataFrom(resource: fileName, ofType: fileType)
+        let dto: CountryWrapper = self.fetchDataFrom(resource: fileName, ofType: fileType)!
+        let countries = dto.data?.map { Country(name: $0.value, ios2: $0.key)}.sorted { $0.name! < $1.name! }
+        return countries
     }
     
+}
+
+class CountryWrapper: Codable {
+    var data: [String: String]?
+    
+    enum CodingKeys: String, CodingKey {
+        case data
+    }
 }
