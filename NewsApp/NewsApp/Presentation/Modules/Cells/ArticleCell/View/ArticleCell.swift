@@ -27,11 +27,17 @@ class ArticleCell: UITableViewCell {
     private func config(with viewModel: ArticleViewModel) {
         posterImageView.makeRoundedCorners(with: 15.0)
         containerView.makeRoundedCorners(with: 20)
-        posterImageView.kf.setImage(with: URL.init(string: viewModel.posterImageURL ?? ""), options: [
-        .scaleFactor(UIScreen.main.scale),
-        .transition(.fade(1)),
-        .cacheOriginalImage,
-        ])
+        if let imageURL = viewModel.posterImageURL {
+            posterImageView.kf.setImage(with: URL.init(string: imageURL ), options: [
+            .scaleFactor(UIScreen.main.scale),
+            .transition(.fade(1)),
+            .cacheOriginalImage,
+            ])
+        } else {
+            posterImageView.image = UIImage(named: "logo")
+            posterImageView.contentMode = .center
+        }
+        
         self.headlineLabel.text = viewModel.headline
         self.dateLabel.text = viewModel.date
        animateCell()
