@@ -45,7 +45,7 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.showLoader(with: "")
-        self.loadData()
+        self.loadData(with: targetLookup)
         setupNavigationBar(innerView: titleLabel)
         setupTableView()
         registerCells()
@@ -80,12 +80,12 @@ class HomeViewController: BaseViewController {
         viewModel.didLaunchFilterView()
     }
     
-    private func loadData() {
+    private func loadData(with: Lookup?) {
         viewModel.loadArticles(with: targetLookup) { (completed) in
             self.hideLoader()
             if completed {
                 self.tableView.reloadData()
-                self.noContentImageView.isHidden = self.viewModel.numberOfArticles > 0
+                self.noContentApperance()
             } else {
                 self.showErrorMessage(text: self.viewModel.errorMessage)
             }
@@ -94,7 +94,11 @@ class HomeViewController: BaseViewController {
     
     @objc func refreshTableView() {
         showLoader(with: "")
-        self.loadData()
+        self.loadData(with: targetLookup)
+    }
+    
+    private func noContentApperance() {
+        self.noContentImageView.isHidden = self.viewModel.numberOfArticles > 0
     }
 }
 
@@ -122,21 +126,9 @@ extension HomeViewController: UITableViewDelegate {
 // MARK:- FilterPopUpDelegate
 extension HomeViewController: FilterPopUpDelegate {
     func dismissWith(data: Any?) {
-        
         self.showLoader(with: "")
         guard let dataLookup = data as? Lookup else {return}
         targetLookup = dataLookup
-        
-        viewModel.loadArticles(with: targetLookup) { (completed) in
-            self.hideLoader()
-            if completed {
-                self.titleLabel.text = self.viewModel.title
-                self.tableView.reloadData()
-                self.noContentImageView.isHidden = self.viewModel.numberOfArticles > 0
-            } else {
-                self.showErrorMessage(text: self.viewModel.errorMessage)
-            }
-        }
-        
+        self.loadData(with: targetLookup)
     }
 }

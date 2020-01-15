@@ -65,6 +65,7 @@
 		DEF9803D23CE08ED00B19F87 /* FilterPopupViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF9803C23CE08ED00B19F87 /* FilterPopupViewModelType.swift */; };
 		DEF9803F23CE0A4000B19F87 /* DetailViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF9803E23CE0A4000B19F87 /* DetailViewModelType.swift */; };
 		DEF9804123CE0A9600B19F87 /* HomeViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF9804023CE0A9600B19F87 /* HomeViewModelType.swift */; };
+		DEF9804523CF3F1700B19F87 /* FilterPopupDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF9804423CF3F1700B19F87 /* FilterPopupDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,7 +103,7 @@
 		DE412DA623C6CC8D00C85EA1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		DE412DAB23C6CCD500C85EA1 /* DetailModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModuleBuilder.swift; sourceTree = "<group>"; };
 		DE412DAD23C6CD0800C85EA1 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
-		DE9C3DCA23C5EB3E0072B154 /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE9C3DCA23C5EB3E0072B154 /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE9C3DCD23C5EB3E0072B154 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE9C3DD423C5EB3E0072B154 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE9C3DD623C5EB3F0072B154 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,6 +131,7 @@
 		DEF9803C23CE08ED00B19F87 /* FilterPopupViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPopupViewModelType.swift; sourceTree = "<group>"; };
 		DEF9803E23CE0A4000B19F87 /* DetailViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelType.swift; sourceTree = "<group>"; };
 		DEF9804023CE0A9600B19F87 /* HomeViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelType.swift; sourceTree = "<group>"; };
+		DEF9804423CF3F1700B19F87 /* FilterPopupDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPopupDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 				DE0E304923C7C67D00F34C03 /* FilterPopupModuleBuilder.swift */,
 				DE0E304523C7C61F00F34C03 /* View */,
 				DE0E304623C7C62600F34C03 /* ViewModel */,
+				DEF9804423CF3F1700B19F87 /* FilterPopupDelegate.swift */,
 			);
 			path = FilterPopup;
 			sourceTree = "<group>";
@@ -327,7 +330,7 @@
 		DE9C3DCB23C5EB3E0072B154 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DE9C3DCA23C5EB3E0072B154 /* NewsApp.app */,
+				DE9C3DCA23C5EB3E0072B154 /* News.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -583,7 +586,7 @@
 			);
 			name = NewsApp;
 			productName = NewsApp;
-			productReference = DE9C3DCA23C5EB3E0072B154 /* NewsApp.app */;
+			productReference = DE9C3DCA23C5EB3E0072B154 /* News.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -704,6 +707,7 @@
 				DE0E304D23C7D0A600F34C03 /* Transition+presentFullScreen.swift in Sources */,
 				DE0AAF1423CBB3460080EE8B /* PickerCellViewModel.swift in Sources */,
 				DE9C3DEE23C5F17A0072B154 /* Endpointed.swift in Sources */,
+				DEF9804523CF3F1700B19F87 /* FilterPopupDelegate.swift in Sources */,
 				DEF9803B23CE072B00B19F87 /* PickerViewModelType.swift in Sources */,
 				DE9C3E1923C606FB0072B154 /* Loadable.swift in Sources */,
 				DE0AAEEF23CB3E770080EE8B /* ArticlesUseCase.swift in Sources */,
@@ -886,7 +890,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.madian.NewsApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = News;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -907,7 +911,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.madian.NewsApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = News;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

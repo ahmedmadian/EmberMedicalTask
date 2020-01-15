@@ -15,13 +15,19 @@ class PickerController: BaseViewController {
     
     // MARK:- Properties
     var viewModel: PickerViewModelType!
+    var currentSelectedIndex: IndexPath!
+    var firstSelected: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.showLoader(with: "Loading ..")
-        viewModel.getFetchedData {
+        viewModel.getFetchedData { (completed) in
             self.hideLoader()
-            self.tableView.reloadData()
+            if completed {
+                self.tableView.reloadData()
+            } else {
+                self.showErrorMessage(text: self.viewModel.errorMessage)
+            }
         }
     }
     
@@ -29,17 +35,14 @@ class PickerController: BaseViewController {
     @IBAction func cancelDidTapped(_ sender: Any) {
         viewModel.cancelDidTapped()
     }
+    
     @IBAction func doneDidTapped(_ sender: Any) {
         viewModel.doneDidTapped()
     }
-    
-    var currentSelectedIndex: IndexPath!
-    var firstSelected: Bool = true
 }
 
 // MARK:- UITableViewDataSource
 extension PickerController: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfData
     }
@@ -49,13 +52,10 @@ extension PickerController: UITableViewDataSource {
         let cell = PickerCell.instantiateFromNib(with: data)
         return cell
     }
-    
 }
 
-//MARK:- UITableViewDelegate
-
+// MARK:- UITableViewDelegate
 extension PickerController: UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if firstSelected {
             viewModel.didSelectRow(at: indexPath)

@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol DetailViewModelType {
+    var data: ArticleViewModel {get}
+}

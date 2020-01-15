@@ -17,13 +17,14 @@ class ArticleCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
     
+    // MARK: - Methods
     static func instantiateFromNib(with viewModel: ArticleViewModel) -> ArticleCell {
         let cell = UINib(nibName: typeName, bundle: .main).instantiate(withOwner: self, options: nil).first as! ArticleCell
         cell.config(with: viewModel)
         return cell
     }
     
-    func config(with viewModel: ArticleViewModel) {
+    private func config(with viewModel: ArticleViewModel) {
         posterImageView.makeRoundedCorners(with: 15.0)
         containerView.makeRoundedCorners(with: 20)
         posterImageView.kf.setImage(with: URL.init(string: viewModel.posterImageURL ?? ""), options: [
@@ -36,7 +37,7 @@ class ArticleCell: UITableViewCell {
        animateCell()
     }
     
-    func animateCell() {
+    private func animateCell() {
         let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 0, 50, 0)
         self.layer.transform = rotationTransform
         self.alpha = 0.5

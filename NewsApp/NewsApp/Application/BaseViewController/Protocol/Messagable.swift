@@ -10,5 +10,5 @@ import Foundation
 
 protocol Messagable: class {
     func showSuccessMessage(text: String)
-    func showErrorMessage(text: String)
+    func showErrorMessage(text: String?)
 }

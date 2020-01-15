@@ -22,6 +22,7 @@ class PickerViewModel: PickerViewModelType {
     var numberOfData: Int {
         return data.count
     }
+    var errorMessage: String?
     
     // MARK:- Initialization
     init(router: UnownedRouter<AppStartUpRoute>, useCase: FilerDataUseCaseable) {
@@ -36,12 +37,15 @@ class PickerViewModel: PickerViewModelType {
         return data[indexPath.row]
     }
     
-    public func getFetchedData(completion: @escaping ()->() ) {
+    public func getFetchedData(completion: @escaping (Bool)->() ) {
         useCase.getFetchedData { (response, error) in
             if let response = response {
                 self.lookups = response
                 self.data = response.map({PickerCellViewModel(id: $0.id, name: $0.name)})
-                completion()
+                completion(true)
+            } else if let error = error {
+                self.errorMessage = error.localizedDescription
+                completion(false)
             }
         }
     }

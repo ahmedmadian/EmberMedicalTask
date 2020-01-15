@@ -41,7 +41,3 @@ class FilterPopupViewModel: FilterPopupViewModelType {
     
 }
 
-
-protocol FilterPopUpDelegate: class {
-    func dismissWith(data: Any?)
-}

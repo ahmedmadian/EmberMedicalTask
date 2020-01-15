@@ -16,7 +16,7 @@ class HomeViewModel: HomeViewModelType {
     private let useCase: ArticlesUseCaseable
     private var articales: [ArticleViewModel]
     
-    var errorMessage: String
+    var errorMessage: String?
     var numberOfArticles: Int {return articales.count}
     var title: String = "News App"
     
@@ -24,7 +24,6 @@ class HomeViewModel: HomeViewModelType {
     init(router: UnownedRouter<AppStartUpRoute>, useCase: ArticlesUseCaseable) {
         self.router = router
         self.useCase = useCase
-        self.errorMessage = ""
         articales = []
     }
         

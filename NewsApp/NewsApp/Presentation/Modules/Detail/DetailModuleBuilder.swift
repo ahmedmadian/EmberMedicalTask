@@ -14,7 +14,7 @@ class DetailModuleBuilder {
     // MARK:- Methods
      static func makeModule(router: UnownedRouter<AppStartUpRoute>,dataSource: ArticleViewModel) -> UIViewController {
         let viewController: DetailViewController = Storyboards.main.instantiate()!
-         viewController.viewModel = DetailViewModel(router: router, article: dataSource)
+         viewController.viewModel = DetailViewModel(router: router, data: dataSource)
          return viewController
      }
     

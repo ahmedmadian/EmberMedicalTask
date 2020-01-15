@@ -9,17 +9,15 @@
 import Foundation
 import XCoordinator
 
-class DetailViewModel {
+class DetailViewModel: DetailViewModelType {
     
     // MARK:- Properties
     private let router: UnownedRouter<AppStartUpRoute>
-    let article: ArticleViewModel
-    var title: String?
+    var data: ArticleViewModel
     
-    init(router: UnownedRouter<AppStartUpRoute>, article: ArticleViewModel) {
-        self.article = article
+    init(router: UnownedRouter<AppStartUpRoute>, data: ArticleViewModel) {
+        self.data = data
         self.router = router
     }
-    
     
 }

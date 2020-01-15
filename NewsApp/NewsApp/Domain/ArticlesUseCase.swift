@@ -22,6 +22,7 @@ class ArticlesUseCase: ArticlesUseCaseable {
         self.articlesRepository = articlesRepository
     }
     
+    //MARK: - ArticlesUseCaseable
     func fetchTopHeadlines(with lookup: Lookup?, completion: @escaping (([Article]?), Error?) -> ()) {
         articlesRepository.fetchTopHeadlines(lookup) { (articles, error) in
             completion(articles, error)

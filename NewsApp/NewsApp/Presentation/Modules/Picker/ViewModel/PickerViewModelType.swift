@@ -9,9 +9,10 @@
 import Foundation
 
 protocol PickerViewModelType {
+    var errorMessage: String? { get }
     var numberOfData: Int { get }
     func data(for indexPath: IndexPath) -> PickerCellViewModel
-    func getFetchedData(completion: @escaping ()->() )
+    func getFetchedData(completion: @escaping (Bool)->() )
     func didSelectRow(current: IndexPath, willSelect: IndexPath)
     func didSelectRow(at indexPath: IndexPath)
     func cancelDidTapped()

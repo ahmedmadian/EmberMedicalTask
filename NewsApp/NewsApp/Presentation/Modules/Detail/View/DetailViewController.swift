@@ -11,23 +11,25 @@ import Kingfisher
 
 class DetailViewController: BaseViewController {
 
+    // MARK: - IBOutlet
     @IBOutlet weak var headlineLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var mainImageView: UIImageView!
     
-    var viewModel: DetailViewModel!
+    //MARK: - ViewModel
+    var viewModel: DetailViewModelType!
     
+    //MARK: - Callbacks
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.largeTitleDisplayMode = .never
-        config(article: viewModel.article)
+        config(article: viewModel.data)
     }
     
-    
-    func config(article: ArticleViewModel) {
+    //MARK: - Methods
+    private func config(article: ArticleViewModel) {
         self.headlineLabel.text = article.headline
-        self.authorLabel.text = "By: \(article.authorName ?? "")"
+        self.authorLabel.text = "By: \(article.authorName ?? article.sourceName ?? "")"
         self.contentLabel.text = article.articleDescription
         mainImageView.kf.setImage(with: URL.init(string: article.posterImageURL ?? ""), options: [
         .scaleFactor(UIScreen.main.scale),
